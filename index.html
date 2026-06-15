@@ -1,159 +1,358 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agung Fazriansyah, M.Kom. | Academic Portfolio</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{
---primary:#2563eb;--secondary:#7c3aed;--accent:#06b6d4;--dark:#0f172a;
-}
-body{font-family:'Poppins',sans-serif;scroll-behavior:smooth}
-.navbar{backdrop-filter:blur(15px);background:rgba(255,255,255,.85)!important}
-.hero{
-min-height:100vh;color:#fff;
-background:linear-gradient(135deg,#2563eb,#7c3aed,#06b6d4);
-display:flex;align-items:center;
-}
-.profile-img{width:380px;max-width:100%;border-radius:30px;box-shadow:0 20px 60px rgba(0,0,0,.35)}
-.section{padding:90px 0}
-.card-modern{
-border:none;border-radius:24px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-transition:.3s;
-}
-.card-modern:hover{transform:translateY(-8px)}
-.stat-number{font-size:2.5rem;font-weight:800;color:var(--primary)}
-.skill-bar{height:12px;border-radius:20px}
-.footer{background:#0f172a;color:#fff}
-.social a{font-size:2rem;margin:0 12px}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agung Fazriansyah | Marketer, Mentor & Educator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --accent: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        .serif-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navbar Custom */
+        .navbar {
+            background-color: rgba(15, 23, 42, 0.8) !important;
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 180px 0 100px 0;
+            background: radial-gradient(circle at 90% 10%, rgba(56, 189, 248, 0.1) 0%, transparent 40%);
+        }
+
+        .badge-custom {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Card Custom */
+        .glass-card {
+            background-color: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(56, 189, 248, 0.3);
+            box-shadow: 0 10px 30px -15px rgba(56, 189, 248, 0.3);
+        }
+
+        /* Timeline Experience */
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            border-left: 2px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 30px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -7px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            box-shadow: 0 0 10px var(--accent);
+        }
+
+        /* Tech Tags */
+        .tag-tech {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin: 4px;
+            color: #cbd5e1;
+        }
+
+        /* Section Title Styling */
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        a:hover {
+            color: #7dd3fc;
+        }
+    </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg fixed-top">
-<div class="container">
-<a class="navbar-brand fw-bold">Agung Fazriansyah</a>
-<div class="navbar-nav ms-auto">
-<a class="nav-link" href="#about">About</a>
-<a class="nav-link" href="#research">Research</a>
-<a class="nav-link" href="#skills">Skills</a>
-<a class="nav-link" href="#contact">Contact</a>
-</div>
-</div>
-</nav>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold tracking-tight" href="#">AF<span class="text-info">.</span></a>
+            <button class="navbar-collapse-toggle navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-3">
+                    <li class="nav-item"><a class="nav-link text-white-50" href="#summary">Summary</a></li>
+                    <li class="nav-item"><a class="nav-link text-white-50" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link text-white-50" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link text-white-50" href="#insights">Insights & Values</a></li>
+                    <li class="nav-item"><a class="btn btn-outline-info btn-sm px-3 rounded-pill" href="#contact">Let's Talk</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<section class="hero">
-<div class="container">
-<div class="row align-items-center">
-<div class="col-lg-7">
-<span class="badge bg-light text-dark mb-3">Certified Programmer</span>
-<h1 class="display-3 fw-bold">Agung Fazriansyah, M.Kom.</h1>
-<p class="lead">Lecturer • Researcher • Digital & Marketing Enthusiast</p>
-<p>Menghubungkan dunia akademik, teknologi, data mining, machine learning, digital & marketing untuk menciptakan karya dan solusi yang berdampak.</p>
-<p>
-<a class="btn btn-light btn-lg" href="https://scholar.google.com/citations?user=iWzIfyEAAAAJ&hl=id">Google Scholar</a>
-<a class="btn btn-outline-light btn-lg" href="https://id.linkedin.com/in/agung-fazriansyah-1b0017119">LinkedIn</a>
-</p>
-</div>
-<div class="col-lg-5 text-center">
-<img src="fzr.png" class="profile-img" alt="Agung Fazriansyah">
-</div>
-</div>
-</div>
-</section>
+    <section class="hero-section" id="summary">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-7">
+                    <span class="badge-custom mb-3 d-inline-block">👋 Salam Kenal, Saya Agung</span>
+                    <h1 class="display-3 fw-bold mb-4">
+                        Bridging the Gap Between <span class="text-info">Tech Logic</span> & Human Impact.
+                    </h1>
+                    <p class="lead text-muted mb-4 fs-5" style="line-height: 1.8;">
+                        Saya adalah seorang manusia biasa sekaligus akademisi (M.Kom.) yang percaya bahwa baris kode terbaik tidak hanya efisien dieksekusi mesin, tapi juga menyelesaikan masalah nyata manusia. Fokus pada pengembangan arsitektur web modern, riset mendalam, serta pertumbuhan ekosistem digital.
+                    </p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="https://id.linkedin.com/in/agung-fazriansyah-1b0017119" target="_blank" class="btn btn-info px-4 py-2 rounded-pill text-dark fw-bold"><i class="bi bi-linkedin me-2"></i>LinkedIn Profile</a>
+                        <a href="https://github.com/MasAgung15" target="_blank" class="btn btn-outline-secondary px-4 py-2 rounded-pill text-white"><i class="bi bi-github me-2"></i>GitHub</a>
+                        <a href="https://scholar.google.com/citations?user=iWzIfyEAAAAJ&hl=id" target="_blank" class="btn btn-link text-decoration-none text-muted pt-2"><i class="bi bi-google me-1"></i> Google Scholar</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 text-center">
+                    <div class="glass-card p-5 text-start position-relative overflow-hidden">
+                        <div class="position-absolute opacity-10 end-0 bottom-0" style="font-size: 12rem; transform: translate(20px, 40px); font-family: monospace;">&lt;/&gt;</div>
+                        <h4 class="serif-font italic mb-4 text-info">"What I Believe"</h4>
+                        <p class="fs-5 text-white-50">Teknologi hari ini bukan lagi tentang kecanggihan semata, melainkan tentang adaptasi, inklusivitas, dan bagaimana ia mampu menyederhanakan kompleksitas kehidupan sehari-hari.</p>
+                        <hr class="border-secondary my-4">
+                        <div class="d-flex gap-3 align-items-center">
+                            <div>
+                                <small class="text-muted d-block">Instagram Insights</small>
+                                <a href="https://instagram.com/agung.growth" target="_blank" class="text-white fw-bold"><i class="bi bi-instagram me-2"></i>@agung.growth</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="container" style="margin-top:-50px">
-<div class="row g-4">
-<div class="col-md-3"><div class="card-modern p-4 text-center bg-white"><div class="stat-number">20+</div>Publikasi</div></div>
-<div class="col-md-3"><div class="card-modern p-4 text-center bg-white"><div class="stat-number">5+</div>Tahun Mengajar</div></div>
-<div class="col-md-3"><div class="card-modern p-4 text-center bg-white"><div class="stat-number">1000+</div>Mahasiswa</div></div>
-<div class="col-md-3"><div class="card-modern p-4 text-center bg-white"><div class="stat-number">10+</div>Project Digital</div></div>
-</div>
-</section>
+    <section class="py-5 bg-black bg-opacity-20 border-top border-bottom border-secondary border-opacity-10">
+        <div class="container">
+            <div class="row g-4 text-center">
+                <div class="col-6 col-md-3">
+                    <h2 class="display-5 fw-bold text-info">M.Kom.</h2>
+                    <p class="text-muted mb-0 small text-uppercase tracking-wider">Advanced Academic Degree</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h2 class="display-5 fw-bold text-white">15+</h2>
+                    <p class="text-muted mb-0 small text-uppercase tracking-wider">Open Source Projects</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h2 class="display-5 fw-bold text-white">K+</h2>
+                    <p class="text-muted mb-0 small text-uppercase tracking-wider">Digital Community Reach</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h2 class="display-5 fw-bold text-white">100%</h2>
+                    <p class="text-muted mb-0 small text-uppercase tracking-wider">Growth-Minded & Adaptive</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="about" class="section">
-<div class="container">
-<h2 class="text-center mb-5">About Me</h2>
-<div class="row g-4">
-<div class="col-lg-7">
-<div class="card-modern p-4">
-<h4>Profil Profesional</h4>
-<p>Saat ini aktif sebagai Dosen Program Studi Sistem Informasi Universitas Bina Sarana Informatika, sekaligus menjalankan peran strategis dalam aktivitas Public Relations dan Marketing Communication Area untuk membangun citra institusi, meningkatkan engagement masyarakat, serta mendukung pencapaian target penerimaan mahasiswa baru.</p>
-</div>
-</div>
-<div class="col-lg-5">
-<div class="card-modern p-4">
-<h4>Pendidikan</h4>
-<ul>
-<li>S2 Ilmu Komputer - Universitas Nusa Mandiri</li>
-<li>S1 Sistem Informasi - Universitas Nusa Mandiri</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</section>
+    <section class="py-5" id="experience">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h2 class="section-title">Rekam<br><span class="text-info">Jejak Karya.</span></h2>
+                    <p class="text-muted">Kombinasi antara dedikasi profesional dalam membangun sistem berskala produksi dan eksplorasi akademis.</p>
+                </div>
+                <div class="col-lg-8">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="text-info fw-bold small d-block mb-1">PRESENT</span>
+                            <h4 class="fw-bold text-white">Tech Educator & Consultant</h4>
+                            <p class="text-white-50 small mb-2">Independent / Institution Context</p>
+                            <p class="text-muted">Membimbing talenta digital muda, menyusun materi kurikulum teknologi informasi, serta merancang arsitektur aplikasi berbasis web untuk skala UKM/korporat.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="text-muted fw-bold small d-block mb-1">2024 - 2025</span>
+                            <h4 class="fw-bold text-white-50">Full-Stack Developer & Researcher</h4>
+                            <p class="text-white-50 small mb-2">Academic & Professional Projects</p>
+                            <p class="text-muted">Melakukan riset mendalam berbasis data sains untuk tesis magister komputer, sembari mengimplementasikan arsitektur microservices dan serverless pada aplikasi berbasis JavaScript.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="research" class="section bg-light">
-<div class="container">
-<h2 class="text-center mb-5">Research Interest</h2>
-<div class="row g-4">
-<div class="col-md-3"><div class="card-modern p-4 text-center">🤖<h5>Artificial Intelligence</h5></div></div>
-<div class="col-md-3"><div class="card-modern p-4 text-center">📊<h5>Data Mining</h5></div></div>
-<div class="col-md-3"><div class="card-modern p-4 text-center">📈<h5>Digital & Marketing</h5></div></div>
-</div>
-</div>
-</section>
+    <section class="py-5 bg-black bg-opacity-10" id="skills">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Senjata & <span class="text-info">Teknologi.</span></h2>
+                <p class="text-muted">Kumpulan teknologi yang sering saya gunakan untuk mentransformasikan ide menjadi produk nyata.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4">
+                    <div class="glass-card p-4 h-100">
+                        <div class="text-info fs-3 mb-3"><i class="bi bi-front"></i></div>
+                        <h5 class="fw-bold">Front-End Architecture</h5>
+                        <p class="text-muted small">Fokus pada antarmuka yang cepat, intuitif, dan *accessible*.</p>
+                        <div class="mt-3">
+                            <span class="tag-tech">HTML5 & CSS3</span>
+                            <span class="tag-tech">JavaScript (ES6+)</span>
+                            <span class="tag-tech">Bootstrap 5</span>
+                            <span class="tag-tech">Tailwind CSS</span>
+                            <span class="tag-tech">React.js / Vue.js</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="glass-card p-4 h-100">
+                        <div class="text-info fs-3 mb-3"><i class="bi bi-database"></i></div>
+                        <h5 class="fw-bold">Back-End & Databases</h5>
+                        <p class="text-muted small">Membangun logika server yang aman, terukur, dan teroptimasi.</p>
+                        <div class="mt-3">
+                            <span class="tag-tech">Node.js (Express)</span>
+                            <span class="tag-tech">PHP (Laravel)</span>
+                            <span class="tag-tech">RESTful API</span>
+                            <span class="tag-tech">MySQL / PostgreSQL</span>
+                            <span class="tag-tech">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="glass-card p-4 h-100">
+                        <div class="text-info fs-3 mb-3"><i class="bi bi-pie-chart"></i></div>
+                        <h5 class="fw-bold">Research & Analytics</h5>
+                        <p class="text-muted small">Kemampuan analisis akademis magister untuk validasi produk data.</p>
+                        <div class="mt-3">
+                            <span class="tag-tech">Data Mining</span>
+                            <span class="tag-tech">Machine Learning Basis</span>
+                            <span class="tag-tech">Python Data Science</span>
+                            <span class="tag-tech">Academic Writing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="skills" class="section">
-<div class="container">
-<h2 class="text-center mb-5">Skills</h2>
+    <section class="py-5" id="insights">
+        <div class="container py-4">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-4">Research & <span class="text-info">Insights.</span></h2>
+                    <p class="text-muted mb-4">
+                        Sebagai lulusan pascasarjana Ilmu Komputer, saya aktif mendokumentasikan pemikiran, riset kecil, dan konten edukatif seputar pertumbuhan karier IT di media sosial dan portal publikasi ilmiah.
+                    </p>
+                    <div class="glass-card p-4 mb-3">
+                        <div class="d-flex gap-3">
+                            <div class="fs-2 text-info"><i class="bi bi-journal-text"></i></div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Scientific Publication & Tesis</h6>
+                                <p class="text-muted small mb-0">Riset algoritma dan implementasi sistem komputasi terdistribusi. Dapat diakses secara terbuka via Google Scholar.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-card p-4">
+                        <div class="d-flex gap-3">
+                            <div class="fs-2 text-info"><i class="bi bi-lightbulb"></i></div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Micro-blogging & Edukasi Karier</h6>
+                                <p class="text-muted small mb-0">Berbagi tips seputar *coding mindset*, *personal growth*, dan kehidupan dunia IT melalui akun <a href="https://instagram.com/agung.growth" target="_blank">@agung.growth</a>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="p-4 bg-info bg-opacity-5 rounded-4 border border-info border-opacity-10">
+                        <h4 class="serif-font text-white mb-3">"Sains Tanpa Implementasi Adalah Teori Halusinasi. Implementasi Tanpa Sains Adalah Pondasi Rapuh."</h4>
+                        <p class="text-muted mb-0 small">— Prinsip Kerja Agung Fazriansyah</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<p>Web Development</p>
-<div class="progress mb-3"><div class="progress-bar skill-bar" style="width:95%">95%</div></div>
+    <section class="py-5 bg-black bg-opacity-30" id="contact">
+        <div class="container py-4 text-center">
+            <div class="max-w-md mx-auto" style="max-width: 600px; margin: 0 auto;">
+                <span class="badge-custom mb-3 d-inline-block">Mari Berkolaborasi</span>
+                <h2 class="fw-bold display-6 mb-4">Punya Ide Proyek, Riset, atau Kebutuhan Training?</h2>
+                <p class="text-muted mb-5">Pintu kolaborasi selalu terbuka lebar. Kirim pesan Anda, baik untuk sekadar diskusi teknologi atau pengembangan sistem skala besar.</p>
+                <div class="card glass-card p-4 text-start">
+                    <form action="#" method="POST" onsubmit="alert('Demo Form Submitted!'); return false;">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label small text-muted">Nama Anda</label>
+                                <input type="text" class="form-control bg-dark border-secondary text-white" placeholder="John Doe" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small text-muted">Email</label>
+                                <input type="email" class="form-control bg-dark border-secondary text-white" placeholder="john@example.com" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label small text-muted">Pesan / Brief Proyek</label>
+                                <textarea class="form-control bg-dark border-secondary text-white" rows="4" placeholder="Halo Agung, mari berdiskusi tentang..." required></textarea>
+                            </div>
+                            <div class="col-12 mt-4">
+                                <button type="submit" class="btn btn-info w-100 text-dark fw-bold py-2 rounded-3">Kirim Pesan Sekarang</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<p>Data Mining</p>
-<div class="progress mb-3"><div class="progress-bar skill-bar bg-success" style="width:90%">90%</div></div>
+    <footer class="py-4 border-top border-secondary border-opacity-10">
+        <div class="container text-center text-md-between d-md-flex align-items-center justify-content-between">
+            <p class="text-muted small mb-md-0">&copy; 2026 Agung Fazriansyah, M.Kom. All rights reserved.</p>
+            <div class="d-flex gap-3 justify-content-center">
+                <a href="https://id.linkedin.com/in/agung-fazriansyah-1b0017119" target="_blank" class="text-muted fs-5"><i class="bi bi-linkedin"></i></a>
+                <a href="https://github.com/MasAgung15" target="_blank" class="text-muted fs-5"><i class="bi bi-github"></i></a>
+                <a href="https://instagram.com/agung.growth" target="_blank" class="text-muted fs-5"><i class="bi bi-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
 
-<p>Digital Marketing</p>
-<div class="progress mb-3"><div class="progress-bar skill-bar bg-info" style="width:90%">90%</div></div>
-
-<p>SEO</p>
-<div class="progress"><div class="progress-bar skill-bar bg-warning" style="width:88%">88%</div></div>
-</div>
-</section>
-
-<section class="section bg-light">
-<div class="container">
-<h2 class="text-center mb-5">Connect With Me</h2>
-<div class="text-center social">
-<a href="https://github.com/MasAgung15"><i class="bi bi-github"></i></a>
-<a href="https://instagram.com/agung.growth"><i class="bi bi-instagram"></i></a>
-<a href="https://id.linkedin.com/in/agung-fazriansyah-1b0017119"><i class="bi bi-linkedin"></i></a>
-<a href="https://scholar.google.com/citations?user=iWzIfyEAAAAJ&hl=id"><i class="bi bi-mortarboard-fill"></i></a>
-</div>
-</div>
-</section>
-
-<section id="contact" class="section">
-<div class="container text-center">
-<h2>Let's Collaborate</h2>
-<p>Kolaborasi riset, seminar, pelatihan, dan project digital.</p>
-<a href="mailto:agung.fzr@bsi.ac.id" class="btn btn-primary">Email</a>
-<a href="https://wa.me/6289502072043" class="btn btn-success">WhatsApp</a>
-</div>
-</section>
-
-<footer class="footer py-4 text-center">
-<div class="container">
-<h4>Agung Fazriansyah, M.Kom.</h4>
-<p>Lecturer • Researcher • Digital & Marketing Enthusiast</p>
-</div>
-</footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
