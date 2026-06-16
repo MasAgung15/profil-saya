@@ -1,157 +1,290 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agung Fazriansyah, M.Kom. | Portfolio </title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{
---primary:#2563eb;--secondary:#7c3aed;--accent:#06b6d4;--dark:#0f172a;
-}
-body{font-family:'Poppins',sans-serif;scroll-behavior:smooth}
-.navbar{backdrop-filter:blur(15px);background:rgba(255,255,255,.85)!important}
-.hero{
-min-height:100vh;color:#fff;
-background:linear-gradient(135deg,#2563eb,#7c3aed,#06b6d4);
-display:flex;align-items:center;
-}
-.profile-img{width:380px;max-width:100%;border-radius:30px;box-shadow:0 20px 60px rgba(0,0,0,.35)}
-.section{padding:90px 0}
-.card-modern{
-border:none;border-radius:24px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-transition:.3s;
-}
-.card-modern:hover{transform:translateY(-8px)}
-.stat-number{font-size:2.5rem;font-weight:800;color:var(--primary)}
-.skill-bar{height:12px;border-radius:20px}
-.footer{background:#0f172a;color:#fff}
-.social a{font-size:2rem;margin:0 12px}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agung Fazriansyah, M.Kom. | Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans (Sangat modern & ramah untuk branding/PR) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            light: '#faf9f5',  /* Soft warm-white backdrop */
+                            dark: '#1e2530',   /* Deep charcoal profesional */
+                            accent: '#c97d60', /* Terracotta hangat untuk sentuhan Marcom/PR */
+                            muted: '#718096'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-<!--
-<nav class="navbar navbar-expand-lg fixed-top">
-<div class="container">
-<a class="navbar-brand fw-bold">Personal Blog</a>
-</div>
-</nav> -->
+<body class="bg-brand-light text-brand-dark font-sans antialiased">
 
-<section class="hero">
-<div class="container">
-<div class="row align-items-center">
-<div class="col-lg-7">
-<span class="badge bg-light text-dark mb-3">Halo, Perlkenalkan saya</span>
-<h1 class="display-3 fw-bold">Agung Fazriansyah, M.Kom.</h1>
-<p class="lead">Lecturer • Public Relations • Digital & Marketing Communications</p>
-<p>Kolaborasi dunia akademik, teknologi, data mining, machine learning, digital & marketing untuk menciptakan karya dan solusi yang berdampak.</p>
-<p>
-<a class="btn btn-light btn-lg" href="https://scholar.google.com/citations?user=iWzIfyEAAAAJ&hl=id">Google Scholar</a>
-<a class="btn btn-outline-light btn-lg" href="https://id.linkedin.com/in/agung-fazriansyah-1b0017119">LinkedIn</a>
-</p>
-</div>
-<div class="col-lg-5 text-center">
-<img src="fzr.png" class="profile-img" alt="Agung Fazriansyah">
-</div>
-</div>
-</div>
-</section>
+    <!-- HERO SECTION -->
+    <section class="relative min-h-[90vh] flex items-center pt-24 pb-20 overflow-hidden bg-gradient-to-br from-[#faf9f5] via-[#f5ede0] to-[#edf2f7]">
+        <!-- Dekorasi Lingkaran Abstrak Lembut (Vibe Marcom Kreatif) -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-accent/5 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute bottom-0 left-10 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl -z-10"></div>
 
-<section class="container" style="margin-top:-50px">
-<div class="row g-4">
-<div class="col-md-3"><div class="card-modern p-4 text-center bg-white"><div class="stat-number">20+</div>Publikasi</div></div>
-<div class="col-md-3"><div class="card-modern p-4 text-center bg-white"><div class="stat-number">5+</div>Tahun Mengajar</div></div>
-<div class="col-md-3"><div class="card-modern p-4 text-center bg-white"><div class="stat-number">1000+</div>Mahasiswa</div></div>
-<div class="col-md-3"><div class="card-modern p-4 text-center bg-white"><div class="stat-number">10+</div>Project Digital</div></div>
-</div>
-</section>
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <span class="inline-block bg-brand-accent/10 text-brand-accent border border-brand-accent/20 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase">
+                        ✨ Edukasi • Komunikasi • Teknologi
+                    </span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-brand-dark leading-tight">
+                        Agung Fazriansyah, <span class="text-brand-accent font-normal italic">M.Kom.</span>
+                    </h1>
+                    <p class="text-lg md:text-xl font-medium text-brand-muted/90">
+                        Lecturer • Public Relations • Digital & Marketing Communications
+                    </p>
+                    <p class="text-base md:text-lg text-brand-muted leading-relaxed max-w-xl mx-auto lg:mx-0">
+                        Kolaborasi dunia akademik, teknologi, *data mining*, *machine learning*, serta strategi komunikasi digital untuk menciptakan karya dan solusi yang berdampak bagi masyarakat.
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-content-center lg:justify-start pt-2">
+                        <a href="https://scholar.google.com/citations?user=iWzIfyEAAAAJ&hl=id" target="_blank" class="w-full sm:w-auto px-6 py-3 text-center bg-brand-accent text-white font-semibold rounded-xl shadow-lg shadow-brand-accent/20 hover:bg-[#b36b4e] transition-all transform hover:-translate-y-0.5">
+                            <i class="bi bi-mortarboard-fill me-2"></i> Google Scholar
+                        </a>
+                        <a href="https://id.linkedin.com/in/agung-fazriansyah-1b0017119" target="_blank" class="w-full sm:w-auto px-6 py-3 text-center bg-white border border-gray-200 text-brand-dark font-semibold rounded-xl shadow-sm hover:bg-gray-50 transition-all transform hover:-translate-y-0.5">
+                            <i class="bi bi-linkedin me-2 text-blue-600"></i> LinkedIn
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative group">
+                        <!-- Background Glow Effect -->
+                        <div class="absolute -inset-1 bg-gradient-to-r from-brand-accent to-amber-500 rounded-[2rem] blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
+                        <img src="fzr.png" class="relative w-[340px] max-w-full rounded-[2rem] shadow-2xl object-cover bg-white" alt="Agung Fazriansyah">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="about" class="section">
-<div class="container">
-<h2 class="text-center mb-5">About Me</h2>
-<div class="row g-4">
-<div class="col-lg-7">
-<div class="card-modern p-4">
-<h4>Profil Profesional</h4>
-<p>Saat ini aktif sebagai Dosen Program Studi Sistem Informasi Universitas Bina Sarana Informatika, sekaligus menjalankan peran strategis dalam aktivitas Public Relations dan Marketing Communication Area untuk membangun citra institusi, meningkatkan engagement masyarakat, serta mendukung pencapaian target penerimaan mahasiswa baru.
+    <!-- STATISTICS CARD SECTION -->
+    <section class="relative z-10 -mt-10 px-6">
+        <div class="container mx-auto max-w-5xl">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-white/80 backdrop-blur-md p-6 rounded-2xl shadow-xl border border-gray-100">
+                <div class="text-center p-2">
+                    <div class="text-3xl font-extrabold text-brand-accent">20+</div>
+                    <div class="text-xs md:text-sm font-medium text-brand-muted mt-1">Publikasi</div>
+                </div>
+                <div class="text-center p-2 border-l border-gray-100">
+                    <div class="text-3xl font-extrabold text-brand-dark">5+</div>
+                    <div class="text-xs md:text-sm font-medium text-brand-muted mt-1">Tahun Mengajar</div>
+                </div>
+                <div class="text-center p-2 border-l border-gray-100">
+                    <div class="text-3xl font-extrabold text-brand-dark">1000+</div>
+                    <div class="text-xs md:text-sm font-medium text-brand-muted mt-1">Mahasiswa</div>
+                </div>
+                <div class="text-center p-2 border-l border-gray-100">
+                    <div class="text-3xl font-extrabold text-brand-dark">10+</div>
+                    <div class="text-xs md:text-sm font-medium text-brand-muted mt-1">Project Digital</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-Fokus keahlian meliputi Digital & Marketing Strategy, Branding, Event Management, Public Relations, Data Mining, dan Pengembangan Sistem Informasi berbasis teknologi digital.</p>
-</div>
-</div>
-<div class="col-lg-5">
-<div class="card-modern p-4">
-<h4>Pendidikan</h4>
-<ul>
-<li>S2 Ilmu Komputer - Universitas Nusa Mandiri</li>
-<li>S1 Sistem Informasi - Universitas Nusa Mandiri</li>
-<li>D3 Manajemen Informatika - Bina Sarana Informatika</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</section>
+    <!-- ABOUT ME SECTION -->
+    <section id="about" class="py-24 px-6">
+        <div class="container mx-auto max-w-5xl">
+            <h2 class="text-3xl font-bold text-center text-brand-dark mb-12 relative inline-block left-1/2 transform -translate-x-1/2">
+                About Me
+                <span class="block w-10 h-1 bg-brand-accent mx-auto mt-2 rounded"></span>
+            </h2>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Profil Card -->
+                <div class="lg:col-span-7 bg-white p-8 rounded-2xl shadow-sm border border-gray-50 hover:shadow-md transition-all">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="p-2 bg-brand-accent/10 rounded-lg text-brand-accent"><i class="bi bi-person-workspace text-xl"></i></span>
+                        <h4 class="text-xl font-bold text-brand-dark">Profil Profesional</h4>
+                    </div>
+                    <p class="text-brand-muted leading-relaxed text-sm md:text-base">
+                        Saat ini aktif sebagai Dosen Program Studi Sistem Informasi Universitas Bina Sarana Informatika, sekaligus menjalankan peran strategis dalam aktivitas <strong>Public Relations</strong> dan <strong>Marketing Communication Area</strong> untuk membangun citra institusi, meningkatkan *engagement* masyarakat, serta mendukung pencapaian target penerimaan mahasiswa baru.
+                    </p>
+                    <p class="text-brand-muted leading-relaxed mt-4 text-sm md:text-base">
+                        Fokus keahlian meliputi Digital & Marketing Strategy, Branding, Event Management, Public Relations, Data Mining, dan Pengembangan Sistem Informasi berbasis teknologi digital.
+                    </p>
+                </div>
+                <!-- Pendidikan Card -->
+                <div class="lg:col-span-5 bg-white p-8 rounded-2xl shadow-sm border border-gray-50 hover:shadow-md transition-all">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="p-2 bg-brand-accent/10 rounded-lg text-brand-accent"><i class="bi bi-mortarboard text-xl"></i></span>
+                        <h4 class="text-xl font-bold text-brand-dark">Pendidikan</h4>
+                    </div>
+                    <ul class="space-y-4 relative border-l border-gray-100 pl-4 ml-2">
+                        <li class="relative">
+                            <span class="absolute -left-[21px] top-1.5 w-3 h-3 bg-brand-accent rounded-full"></span>
+                            <div class="text-sm font-bold text-brand-dark">S2 Ilmu Komputer</div>
+                            <div class="text-xs text-brand-muted">Universitas Nusa Mandiri</div>
+                        </li>
+                        <li class="relative">
+                            <span class="absolute -left-[21px] top-1.5 w-3 h-3 bg-gray-300 rounded-full"></span>
+                            <div class="text-sm font-bold text-brand-dark">S1 Sistem Informasi</div>
+                            <div class="text-xs text-brand-muted">Universitas Nusa Mandiri</div>
+                        </li>
+                        <li class="relative">
+                            <span class="absolute -left-[21px] top-1.5 w-3 h-3 bg-gray-300 rounded-full"></span>
+                            <div class="text-sm font-bold text-brand-dark">D3 Manajemen Informatika</div>
+                            <div class="text-xs text-brand-muted">Bina Sarana Informatika</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="research" class="section bg-light">
-<div class="container">
-<h2 class="text-center mb-5">Research Interest</h2>
-<div class="row g-4">
-<div class="col-md-3"><div class="card-modern p-4 text-center">🤖<h5>Artificial Intelligence</h5></div></div>
-<div class="col-md-3"><div class="card-modern p-4 text-center">📊<h5>Data Mining</h5></div></div>
-<div class="col-md-3"><div class="card-modern p-4 text-center">🧠<h5>Machine Learning</h5></div></div>
-<div class="col-md-3"><div class="card-modern p-4 text-center">📈<h5>Digital Marketing</h5></div></div>
-</div>
-</div>
-</section>
+    <!-- RESEARCH INTEREST -->
+    <section id="research" class="py-20 bg-gray-50 px-6 border-y border-gray-100">
+        <div class="container mx-auto max-w-5xl">
+            <h2 class="text-3xl font-bold text-center text-brand-dark mb-12 relative inline-block left-1/2 transform -translate-x-1/2">
+                Research Interest
+                <span class="block w-10 h-1 bg-brand-accent mx-auto mt-2 rounded"></span>
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white p-6 rounded-2xl border border-gray-100 text-center hover:border-brand-accent/30 hover:shadow-md transition-all">
+                    <div class="text-3xl mb-2">🤖</div>
+                    <h5 class="font-bold text-brand-dark text-sm md:text-base">Artificial Intelligence</h5>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-gray-100 text-center hover:border-brand-accent/30 hover:shadow-md transition-all">
+                    <div class="text-3xl mb-2">📊</div>
+                    <h5 class="font-bold text-brand-dark text-sm md:text-base">Data Mining</h5>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-gray-100 text-center hover:border-brand-accent/30 hover:shadow-md transition-all">
+                    <div class="text-3xl mb-2">🧠</div>
+                    <h5 class="font-bold text-brand-dark text-sm md:text-base">Machine Learning</h5>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-gray-100 text-center hover:border-brand-accent/30 hover:shadow-md transition-all">
+                    <div class="text-3xl mb-2">📈</div>
+                    <h5 class="font-bold text-brand-dark text-sm md:text-base">Digital Marketing</h5>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="skills" class="section">
-<div class="container">
-<h2 class="text-center mb-5">Skills</h2>
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="py-24 px-6">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-bold text-center text-brand-dark mb-12 relative inline-block left-1/2 transform -translate-x-1/2">
+                Skills & Expertise
+                <span class="block w-10 h-1 bg-brand-accent mx-auto mt-2 rounded"></span>
+            </h2>
+            
+            <div class="space-y-6 bg-white p-8 rounded-2xl shadow-sm border border-gray-50">
+                <!-- Skill 1 -->
+                <div>
+                    <div class="flex justify-between text-sm font-semibold text-brand-dark mb-2">
+                        <span>Web Development</span>
+                        <span>88%</span>
+                    </div>
+                    <div class="w-full bg-gray-100 h-2.5 rounded-full overflow-hidden">
+                        <div class="bg-blue-600 h-full rounded-full" style="width: 88%"></div>
+                    </div>
+                </div>
 
-<p>Web Development</p>
-<div class="progress mb-3"><div class="progress-bar skill-bar" style="width:88%">88%</div></div>
+                <!-- Skill 2 -->
+                <div>
+                    <div class="flex justify-between text-sm font-semibold text-brand-dark mb-2">
+                        <span>AI & Machine Learning</span>
+                        <span>95%</span>
+                    </div>
+                    <div class="w-full bg-gray-100 h-2.5 rounded-full overflow-hidden">
+                        <div class="bg-purple-600 h-full rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
 
-<p>AI & Machine Learning</p>
-<div class="progress mb-3"><div class="progress-bar skill-bar bg-success" style="width:95%">95%</div></div>
+                <!-- Skill 3 -->
+                <div>
+                    <div class="flex justify-between text-sm font-semibold text-brand-dark mb-2">
+                        <span>Digital & Marketing Strategy</span>
+                        <span>95%</span>
+                    </div>
+                    <div class="w-full bg-gray-100 h-2.5 rounded-full overflow-hidden">
+                        <div class="bg-brand-accent h-full rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
 
-<p>Digital & Marketing Strategy</p>
-<div class="progress mb-3"><div class="progress-bar skill-bar bg-info" style="width:95%">95%</div></div>
+                <!-- Skill 4 -->
+                <div>
+                    <div class="flex justify-between text-sm font-semibold text-brand-dark mb-2">
+                        <span>Public Relations</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="w-full bg-gray-100 h-2.5 rounded-full overflow-hidden">
+                        <div class="bg-amber-500 h-full rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<p>Public Relations</p>
-<div class="progress"><div class="progress-bar skill-bar bg-warning" style="width:90%">90%</div></div>
-</div>
-</section>
+    <!-- CONNECT SECTION -->
+    <section class="py-16 bg-gray-50 border-y border-gray-100 px-6">
+        <div class="container mx-auto text-center max-w-2xl">
+            <h3 class="text-2xl font-bold text-brand-dark mb-6">Jejaring Sosial & Publikasi</h3>
+            <div class="flex justify-center gap-6">
+                <a href="https://github.com/MasAgung15" target="_blank" class="w-12 h-12 inline-flex items-center justify-center rounded-xl bg-white border border-gray-200 text-brand-dark text-xl shadow-sm hover:text-brand-accent hover:border-brand-accent/40 transition-all transform hover:-translate-y-1">
+                    <i class="bi bi-github"></i>
+                </a>
+                <a href="https://instagram.com/agung.growth" target="_blank" class="w-12 h-12 inline-flex items-center justify-center rounded-xl bg-white border border-gray-200 text-brand-dark text-xl shadow-sm hover:text-pink-600 hover:border-pink-300 transition-all transform hover:-translate-y-1">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="https://id.linkedin.com/in/agung-fazriansyah-1b0017119" target="_blank" class="w-12 h-12 inline-flex items-center justify-center rounded-xl bg-white border border-gray-200 text-brand-dark text-xl shadow-sm hover:text-blue-600 hover:border-blue-300 transition-all transform hover:-translate-y-1">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="https://scholar.google.com/citations?user=iWzIfyEAAAAJ&hl=id" target="_blank" class="w-12 h-12 inline-flex items-center justify-center rounded-xl bg-white border border-gray-200 text-brand-dark text-xl shadow-sm hover:text-amber-600 hover:border-amber-300 transition-all transform hover:-translate-y-1">
+                    <i class="bi bi-mortarboard-fill"></i>
+                </a>
+            </div>
+        </div>
+    </section>
 
-<section class="section bg-light">
-<div class="container">
-<h2 class="text-center mb-5">Connect With Me</h2>
-<div class="text-center social">
-<a href="https://github.com/MasAgung15"><i class="bi bi-github"></i></a>
-<a href="https://instagram.com/agung.growth"><i class="bi bi-instagram"></i></a>
-<a href="https://id.linkedin.com/in/agung-fazriansyah-1b0017119"><i class="bi bi-linkedin"></i></a>
-<a href="https://scholar.google.com/citations?user=iWzIfyEAAAAJ&hl=id"><i class="bi bi-mortarboard-fill"></i></a>
-</div>
-</div>
-</section>
+    <!-- CONTACT / COLLABORATION SECTION -->
+    <section id="contact" class="py-24 px-6 bg-white">
+        <div class="container mx-auto max-w-xl text-center space-y-6">
+            <span class="inline-block bg-brand-accent/10 text-brand-accent border border-brand-accent/20 px-4 py-1 rounded-full text-xs font-semibold">
+                📩 Hubungi Saya
+            </span>
+            <h2 class="text-3xl font-extrabold text-brand-dark">Let's Collaborate</h2>
+            <p class="text-brand-muted text-base">
+                Terbuka untuk kolaborasi riset bersama, pembicara seminar, pelatihan korporat, maupun pengerjaan proyek transformasi digital terintegrasi.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                <a href="mailto:agung.fzr@bsi.ac.id" class="px-8 py-3 bg-brand-dark text-white font-semibold rounded-xl shadow-md hover:bg-gray-800 transition-all">
+                    <i class="bi bi-envelope me-2"></i> Kirim Email
+                </a>
+                <a href="https://wa.me/6289502072043" target="_blank" class="px-8 py-3 bg-emerald-600 text-white font-semibold rounded-xl shadow-md hover:bg-emerald-700 transition-all">
+                    <i class="bi bi-whatsapp me-2"></i> WhatsApp Chat
+                </a>
+            </div>
+        </div>
+    </section>
 
-<section id="contact" class="section">
-<div class="container text-center">
-<h2>Let's Collaborate</h2>
-<p>Kolaborasi riset, seminar, pelatihan, dan project digital.</p>
-<a href="mailto:agung.fzr@bsi.ac.id" class="btn btn-primary">Email</a>
-<a href="https://wa.me/6289502072043" class="btn btn-success">WhatsApp</a>
-</div>
-</section>
-
-<footer class="footer py-4 text-center">
-<div class="container">
-<h4>Agung Fazriansyah, M.Kom.</h4>
-<p>Lecturer • Researcher • Digital & Marketing Communications</p>
-</div>
-</footer>
+    <!-- FOOTER -->
+    <footer class="bg-brand-dark text-white py-12 px-6">
+        <div class="container mx-auto max-w-5xl text-center space-y-3">
+            <h4 class="text-xl font-bold tracking-tight">Agung Fazriansyah, M.Kom.</h4>
+            <p class="text-sm text-gray-400">Lecturer • Researcher • Digital & Marketing Communications</p>
+            <div class="pt-4 text-xs text-gray-500 border-t border-gray-800/60 max-w-xs mx-auto">
+                &copy; 2026. All rights reserved.
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
