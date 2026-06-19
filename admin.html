@@ -3,16 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Admin Blog | Agung Fazriansyah</title>
+    <title>Admin Dashboard | Kelola Blog</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" rel="stylesheet">
     
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
                     colors: {
                         natural: {
                             base: '#2C4A3E',
@@ -27,66 +34,94 @@
         }
     </script>
 </head>
-<body class="bg-natural-clay/50 text-natural-base font-sans antialiased min-h-screen py-12 px-4">
+<body class="bg-natural-clay/40 text-natural-base font-sans antialiased min-h-screen">
 
-    <div class="max-w-4xl mx-auto space-y-8">
-        
-        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white p-6 rounded-3xl border border-natural-base/10 shadow-sm gap-4">
-            <div>
-                <h1 class="text-2xl font-extrabold tracking-tight">Panel Utama Blogger Backend</h1>
-                <p class="text-sm text-natural-muted">Kelola tulisan artikel Anda untuk halaman utama portfolio.</p>
+    <nav class="bg-white border-b border-natural-base/10 sticky top-0 z-40">
+        <div class="container mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <span class="text-xl">🛠️</span>
+                <span class="font-extrabold text-natural-base tracking-tight">Admin CMS Dashboard</span>
             </div>
-            <a href="index.html" class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold bg-natural-clay hover:bg-natural-base hover:text-white rounded-xl transition-all">
-                <i class="bi bi-arrow-left"></i> Lihat Website Utama
+            <a href="index.html" class="text-sm font-bold text-natural-blue hover:underline inline-flex items-center gap-1">
+                <i class="bi bi-arrow-left"></i> Lihat Website
             </a>
         </div>
+    </nav>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            <div class="lg:col-span-7 bg-white p-6 rounded-3xl border border-natural-base/10 shadow-sm space-y-4">
-                <h2 class="text-lg font-bold flex items-center gap-2">
-                    <i class="bi bi-pencil-square text-natural-blue"></i> Buat Postingan Baru
-                </h2>
-                
-                <form id="admin-blog-form" class="space-y-4">
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-natural-muted mb-1">Judul Artikel</label>
-                        <input type="text" id="post-title" required class="w-full px-4 py-2.5 border border-natural-base/20 rounded-xl focus:outline-none focus:border-natural-blue text-sm" placeholder="Masukkan judul...">
-                    </div>
-                    
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-natural-muted mb-1">Kategori / Tag</label>
-                            <input type="text" id="post-category" required class="w-full px-4 py-2.5 border border-natural-base/20 rounded-xl focus:outline-none focus:border-natural-blue text-sm" placeholder="Contoh: AI, Riset, PR">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-natural-muted mb-1">Nama Gambar Cover (Opsional)</label>
-                            <input type="text" id="post-image" class="w-full px-4 py-2.5 border border-natural-base/20 rounded-xl focus:outline-none focus:border-natural-blue text-sm" placeholder="Contoh: gb4.JPG">
-                        </div>
-                    </div>
+    <main class="container mx-auto max-w-6xl px-6 py-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <section class="lg:col-span-5 bg-white p-6 rounded-3xl border border-natural-base/10 shadow-sm space-y-6">
+                <div>
+                    <h2 id="form-title" class="text-xl font-extrabold text-natural-base">Buat Artikel Baru</h2>
+                    <p class="text-xs text-natural-muted mt-1">Isi formulir di bawah untuk mempublikasikan tulisan baru.</p>
+                </div>
+
+                <form id="blog-form" class="space-y-4">
+                    <input type="hidden" id="post-id">
 
                     <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-natural-muted mb-1">Isi Konten Artikel</label>
-                        <textarea id="post-content" rows="8" required class="w-full px-4 py-2 border border-natural-base/20 rounded-xl focus:outline-none focus:border-natural-blue text-sm" placeholder="Tulis artikel lengkap di sini..."></textarea>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-natural-muted mb-1.5" for="post-title">Judul Artikel</label>
+                        <input type="text" id="post-title" required class="w-full bg-natural-clay/40 border border-natural-base/10 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-natural-blue font-medium" placeholder="Masukkan judul menarik...">
                     </div>
 
-                    <button type="submit" class="w-full py-3 bg-natural-base text-white text-sm font-bold rounded-xl hover:bg-natural-blue transition-all shadow-md">
-                        Publikasikan Artikel Ke Website
-                    </button>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-natural-muted mb-1.5" for="post-category">Kategori</label>
+                            <input type="text" id="post-category" required class="w-full bg-natural-clay/40 border border-natural-base/10 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-natural-blue font-medium" placeholder="Contoh: AI, PR, Marketing">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-natural-muted mb-1.5" for="post-date">Tanggal</label>
+                            <input type="text" id="post-date" required class="w-full bg-natural-clay/40 border border-natural-base/10 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-natural-blue font-medium" placeholder="Contoh: 19 Juni 2026">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-natural-muted mb-1.5">Gambar Cover Artikel</label>
+                        <div class="flex items-center gap-4">
+                            <label class="flex flex-col items-center justify-center border-2 border-dashed border-natural-base/20 rounded-xl p-4 bg-natural-clay/10 cursor-pointer hover:bg-natural-clay/30 hover:border-natural-blue transition-all group w-full text-center">
+                                <i class="bi bi-image text-2xl text-natural-muted group-hover:text-natural-blue"></i>
+                                <span class="text-xs font-bold text-natural-muted group-hover:text-natural-blue mt-1" id="upload-label">Pilih File Gambar</span>
+                                <input type="file" id="post-image-file" accept="image/*" class="hidden">
+                            </label>
+                        </div>
+                        <div id="image-preview-container" class="mt-3 hidden bg-natural-clay/30 border border-natural-base/10 rounded-xl p-2 flex items-center justify-between">
+                            <img id="image-preview" src="" class="h-14 w-24 object-cover rounded-lg border border-natural-base/10 bg-white">
+                            <button type="button" id="remove-image-btn" class="text-red-500 hover:text-red-700 text-sm font-bold mr-2">Hapus</button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-natural-muted mb-1.5" for="post-content">Konten Artikel</label>
+                        <textarea id="post-content" required rows="6" class="w-full bg-natural-clay/40 border border-natural-base/10 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-natural-blue font-medium whitespace-pre-wrap" placeholder="Tuliskan isi artikel secara lengkap disini..."></textarea>
+                    </div>
+
+                    <div class="flex gap-2 pt-2">
+                        <button type="submit" id="submit-btn" class="flex-grow py-3 bg-natural-base text-white text-sm font-bold rounded-xl hover:bg-natural-blue transition-all shadow-sm">
+                            <i class="bi bi-check-circle mr-1"></i> Simpan Artikel
+                        </button>
+                        <button type="button" id="cancel-btn" class="hidden px-4 py-3 bg-gray-200 text-gray-700 text-sm font-bold rounded-xl hover:bg-gray-300 transition-all">
+                            Batal
+                        </button>
+                    </div>
                 </form>
-            </div>
+            </section>
 
-            <div class="lg:col-span-5 bg-white p-6 rounded-3xl border border-natural-base/10 shadow-sm flex flex-col h-fit">
-                <h2 class="text-lg font-bold mb-4 flex items-center gap-2">
-                    <i class="bi bi-journal-album text-natural-blue"></i> Daftar Tulisan Anda
-                </h2>
-                <div id="admin-posts-list" class="space-y-3 max-h-[460px] overflow-y-auto pr-1">
+            <section class="lg:col-span-7 bg-white p-6 rounded-3xl border border-natural-base/10 shadow-sm space-y-6">
+                <div>
+                    <h2 class="text-xl font-extrabold text-natural-base">Daftar Artikel</h2>
+                    <p class="text-xs text-natural-muted mt-1">Daftar seluruh artikel yang tersimpan pada database lokal saat ini.</p>
+                </div>
+
+                <div id="admin-blog-list" class="space-y-4 max-h-[600px] overflow-y-auto pr-2">
                     </div>
-            </div>
-        </div>
+            </section>
 
-    </div>
+        </div>
+    </main>
 
     <script>
+        // Data Dummy Awal jika LocalStorage masih kosong murni
         const defaultPosts = [
             {
                 id: 1,
@@ -106,76 +141,217 @@
             }
         ];
 
-        let posts = JSON.parse(localStorage.getItem('agung_blog_posts')) || defaultPosts;
-
-        function getFormattedDate() {
-            const months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
-            const d = new Date();
-            return `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
+        // Memastikan inisialisasi basis data awal
+        if (!localStorage.getItem('agung_blog_posts')) {
+            localStorage.setItem('agung_blog_posts', JSON.stringify(defaultPosts));
         }
 
-        function renderAdminPanel() {
-            const listContainer = document.getElementById('admin-posts-list');
-            listContainer.innerHTML = "";
+        // DOM Elements
+        const blogForm = document.getElementById('blog-form');
+        const postIdInput = document.getElementById('post-id');
+        const postTitleInput = document.getElementById('post-title');
+        const postCategoryInput = document.getElementById('post-category');
+        const postDateInput = document.getElementById('post-date');
+        const postContentInput = document.getElementById('post-content');
+        
+        // DOM Elements untuk Upload Gambar
+        const postImageFileInput = document.getElementById('post-image-file');
+        const uploadLabel = document.getElementById('upload-label');
+        const imagePreviewContainer = document.getElementById('image-preview-container');
+        const imagePreview = document.getElementById('image-preview');
+        const removeImageBtn = document.getElementById('remove-image-btn');
 
-            if(posts.length === 0) {
-                listContainer.innerHTML = `<p class="text-xs text-natural-muted py-4 text-center">Belum ada tulisan artikel.</p>`;
+        const formTitle = document.getElementById('form-title');
+        const submitBtn = document.getElementById('submit-btn');
+        const cancelBtn = document.getElementById('cancel-btn');
+        const adminBlogList = document.getElementById('admin-blog-list');
+
+        // Variabel penampung string Base64 gambar
+        let currentImageBase64 = "";
+
+        // Logika membaca file gambar dan mengubahnya ke Base64 DataURL
+        postImageFileInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                // Validasi ukuran (opsional, disarankan di bawah 2MB karena limitasi localStorage)
+                if (file.size > 2 * 1024 * 1024) {
+                    alert("Ukuran file terlalu besar! Maksimal adalah 2MB agar pas di memori lokal browser.");
+                    this.value = "";
+                    return;
+                }
+
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    currentImageBase64 = event.target.result;
+                    showImagePreview(currentImageBase64, file.name);
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Menampilkan kotak pratinjau gambar
+        function showImagePreview(src, filename) {
+            imagePreview.src = src;
+            uploadLabel.innerText = filename ? filename : "Gambar Terpilih";
+            imagePreviewContainer.classList.remove('hidden');
+        }
+
+        // Aksi tombol Hapus Gambar
+        removeImageBtn.addEventListener('click', function() {
+            currentImageBase64 = "";
+            postImageFileInput.value = "";
+            uploadLabel.innerText = "Pilih File Gambar";
+            imagePreviewContainer.classList.add('hidden');
+            imagePreview.src = "";
+        });
+
+        // Merender seluruh artikel di panel admin
+        function renderAdminList() {
+            const posts = JSON.parse(localStorage.getItem('agung_blog_posts')) || [];
+            adminBlogList.innerHTML = "";
+
+            if (posts.length === 0) {
+                adminBlogList.innerHTML = `<p class="text-sm text-center text-natural-muted py-8 bg-natural-clay/20 rounded-2xl">Tidak ada artikel di database.</p>`;
                 return;
             }
 
-            posts.forEach(post => {
-                const item = document.createElement('div');
-                item.className = "p-3 bg-natural-clay/60 border border-natural-base/5 rounded-xl space-y-2";
-                item.innerHTML = `
-                    <div class="flex justify-between items-start gap-2">
-                        <span class="font-bold text-xs line-clamp-2 text-natural-base">${post.title}</span>
-                        <button onclick="deletePost(${post.id})" class="text-[11px] font-bold bg-red-50 text-red-600 hover:bg-red-600 hover:text-white px-2 py-1 rounded-md transition-all">
-                            Hapus
-                        </button>
+            // Tampilkan artikel dari yang paling baru di urutan teratas
+            [...posts].reverse().forEach(post => {
+                const cover = post.image ? post.image : 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500';
+                const div = document.createElement('div');
+                div.className = "flex gap-4 p-4 border border-natural-base/10 bg-natural-clay/10 rounded-2xl items-center justify-between";
+                
+                div.innerHTML = `
+                    <div class="flex items-center gap-3 min-w-0">
+                        <img src="${cover}" class="w-16 h-12 rounded-lg object-cover border border-natural-base/10 flex-shrink-0 bg-white" onerror="this.src='https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500'">
+                        <div class="min-w-0">
+                            <h4 class="font-bold text-natural-base text-sm truncate">${post.title}</h4>
+                            <p class="text-xs text-natural-muted mt-0.5">${post.category} • ${post.date}</p>
+                        </div>
                     </div>
-                    <div class="flex justify-between text-[10px] text-natural-muted">
-                        <span>Tag: ${post.category}</span>
-                        <span>${post.date}</span>
+                    <div class="flex gap-1 flex-shrink-0">
+                        <button onclick="editPost(${post.id})" class="w-8 h-8 flex items-center justify-center text-natural-blue hover:bg-natural-blue/10 rounded-lg" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                        <button onclick="deletePost(${post.id})" class="w-8 h-8 flex items-center justify-center text-red-500 hover:bg-red-50/80 rounded-lg" title="Hapus"><i class="bi bi-trash3"></i></button>
                     </div>
                 `;
-                listContainer.appendChild(item);
+                adminBlogList.appendChild(div);
             });
         }
 
-        document.getElementById('admin-blog-form').addEventListener('submit', function(e) {
+        // Submit Form (Tambah atau Edit)
+        blogForm.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            const title = document.getElementById('post-title').value;
-            const category = document.getElementById('post-category').value;
-            const image = document.getElementById('post-image').value;
-            const content = document.getElementById('post-content').value;
+            const posts = JSON.parse(localStorage.getItem('agung_blog_posts')) || [];
+            const id = postIdInput.value;
 
-            const newPost = {
-                id: Date.now(),
-                title: title,
-                category: category,
-                date: getFormattedDate(),
-                image: image,
-                content: content
-            };
+            if (id) {
+                // Aksi Edit Artikel yang Ada
+                const index = posts.findIndex(p => p.id == id);
+                if (index !== -1) {
+                    posts[index].title = postTitleInput.value;
+                    posts[index].category = postCategoryInput.value;
+                    posts[index].date = postDateInput.value;
+                    posts[index].content = postContentInput.value;
+                    
+                    // Jika mengunggah gambar baru, timpa gambar lama
+                    if (currentImageBase64) {
+                        posts[index].image = currentImageBase64;
+                    }
+                }
+            } else {
+                // Aksi Tambah Artikel Baru
+                const newPost = {
+                    id: Date.now(), // Unique ID dengan timestamp
+                    title: postTitleInput.value,
+                    category: postCategoryInput.value,
+                    date: postDateInput.value,
+                    content: postContentInput.value,
+                    image: currentImageBase64 || "" // Kosong jika tidak ada unggahan gambar
+                };
+                posts.push(newPost);
+            }
 
-            posts.unshift(newPost);
             localStorage.setItem('agung_blog_posts', JSON.stringify(posts));
+            resetForm();
+            renderAdminList();
             
-            document.getElementById('admin-blog-form').reset();
-            renderAdminPanel();
-            alert("Artikel berhasil diterbitkan ke halaman depan!");
+            // Trigger perubahan instan ke file index.html jika sedang dibuka bersebelahan
+            window.dispatchEvent(new Event('storage'));
         });
 
-        function deletePost(id) {
-            if(confirm("Hapus artikel ini secara permanen dari website?")) {
-                posts = posts.filter(post => post.id !== id);
-                localStorage.setItem('agung_blog_posts', JSON.stringify(posts));
-                renderAdminPanel();
+        // Trigger Masuk Mode Edit Artikel
+        window.editPost = function(id) {
+            const posts = JSON.parse(localStorage.getItem('agung_blog_posts')) || [];
+            const post = posts.find(p => p.id == id);
+
+            if (post) {
+                formTitle.innerText = "Edit Artikel";
+                postIdInput.value = post.id;
+                postTitleInput.value = post.title;
+                postCategoryInput.value = post.category;
+                postDateInput.value = post.date;
+                postContentInput.value = post.content;
+
+                // Tampilkan preview gambar lama jika ada
+                if (post.image) {
+                    currentImageBase64 = post.image;
+                    // Jika isinya berupa data URL Base64
+                    if (post.image.startsWith('data:')) {
+                        showImagePreview(post.image, "Gambar Tersimpan (Base64)");
+                    } else {
+                        showImagePreview(post.image, post.image);
+                    }
+                } else {
+                    currentImageBase64 = "";
+                    imagePreviewContainer.classList.add('hidden');
+                    uploadLabel.innerText = "Pilih File Gambar";
+                }
+
+                submitBtn.innerHTML = `<i class="bi bi-save mr-1"></i> Perbarui Artikel`;
+                cancelBtn.classList.remove('hidden');
+                
+                // Scroll halus ke arah form agar user langsung fokus
+                blogForm.scrollIntoView({ behavior: 'smooth' });
             }
+        };
+
+        // Hapus Artikel
+        window.deletePost = function(id) {
+            if (confirm("Apakah Anda yakin ingin menghapus artikel ini?")) {
+                let posts = JSON.parse(localStorage.getItem('agung_blog_posts')) || [];
+                posts = posts.filter(p => p.id != id);
+                localStorage.setItem('agung_blog_posts', JSON.stringify(posts));
+                
+                if (postIdInput.value == id) {
+                    resetForm();
+                }
+                
+                renderAdminList();
+                window.dispatchEvent(new Event('storage'));
+            }
+        };
+
+        // Reset Formulir Kembali ke Awal
+        function resetForm() {
+            formTitle.innerText = "Buat Artikel Baru";
+            postIdInput.value = "";
+            blogForm.reset();
+            
+            // Bersihkan upload/preview gambar
+            currentImageBase64 = "";
+            imagePreviewContainer.classList.add('hidden');
+            imagePreview.src = "";
+            uploadLabel.innerText = "Pilih File Gambar";
+
+            submitBtn.innerHTML = `<i class="bi bi-check-circle mr-1"></i> Simpan Artikel`;
+            cancelBtn.classList.add('hidden');
         }
 
-        window.onload = renderAdminPanel;
+        cancelBtn.addEventListener('click', resetForm);
+
+        // Render perdana saat halaman dimuat
+        window.onload = renderAdminList;
     </script>
 </body>
 </html>
