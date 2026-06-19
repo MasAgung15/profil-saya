@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artikel | Agung Fazriansyah</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+                    colors: {
+                        natural: {
+                            base: '#2C4A3E',
+                            blue: '#4A6B82',
+                            cream: '#FBFBFA',
+                            clay: '#F4F3EF',
+                            muted: '#6B7A74'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-natural-cream text-natural-base font-sans antialiased">
+
+    <nav class="border-b border-natural-base/10 bg-white/80 backdrop-blur-md sticky top-0 z-50 py-4 px-6">
+        <div class="container mx-auto max-w-3xl flex justify-between items-center">
+            <a href="index.html#blog" class="inline-flex items-center gap-2 text-sm font-bold text-natural-muted hover:text-natural-base transition-colors">
+                <i class="bi bi-arrow-left"></i> Kembali ke Blog
+            </a>
+            <span class="text-xs font-extrabold text-natural-blue tracking-widest uppercase">Agung Fazriansyah</span>
+        </div>
+    </nav>
+
+    <main class="py-12 md:py-16 px-6">
+        <article class="container mx-auto max-w-3xl space-y-8">
+            
+            <div class="space-y-4 text-center md:text-left">
+                <span id="art-category" class="inline-block text-xs font-bold bg-natural-blue/10 text-natural-blue px-3 py-1 rounded-full uppercase tracking-wider">
+                    Kategori
+                </span>
+                <h1 id="art-title" class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-natural-base leading-tight">
+                    Memuat Judul Artikel...
+                </h1>
+                <div class="flex items-center justify-center md:justify-start gap-4 text-xs text-natural-muted font-medium pt-2">
+                    <span class="inline-flex items-center gap-1"><i class="bi bi-calendar3"></i> <span id="art-date">-</span></span>
+                    <span class="inline-flex items-center gap-1"><i class="bi bi-person-circle"></i> Agung Fazriansyah</span>
+                </div>
+            </div>
+
+            <div class="w-full bg-natural-clay rounded-[2rem] overflow-hidden border border-natural-base/5 shadow-sm aspect-video max-h-[450px]">
+                <img id="art-image" src="" alt="Cover Artikel" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800'">
+            </div>
+
+            <div id="art-content" class="text-base md:text-lg text-natural-base leading-relaxed whitespace-pre-wrap space-y-4 font-normal tracking-wide pt-4">
+                </div>
+
+        </article>
+    </main>
+
+    <footer class="border-t border-natural-base/10 bg-white py-8 text-center text-xs text-natural-muted">
+        <p>© 2026 Agung Fazriansyah. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const defaultPosts = [
+            {
+                id: 1,
+                title: "Pemanfaatan Artificial Intelligence dalam Dunia Pendidikan Modern",
+                category: "AI & Edukasi",
+                date: "19 Juni 2026",
+                image: "gb4.JPG",
+                content: "Artificial Intelligence (AI) bukan lagi masa depan, melainkan masa kini..."
+            },
+            {
+                id: 2,
+                title: "Strategi Public Relations Mengoptimalkan Citra Perguruan Tinggi",
+                category: "Public Relations",
+                date: "10 Mei 2026",
+                image: "gb9.JPG",
+                content: "Membangun kepercayaan publik di era digital menuntut PR..."
+            }
+        ];
+
+        function loadArticleDetail() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const postId = urlParams.get('id');
+            const posts = JSON.parse(localStorage.getItem('agung_blog_posts')) || defaultPosts;
+            const article = posts.find(p => p.id == postId);
+
+            if (article) {
+                document.title = `${article.title} | Agung Fazriansyah`;
+                document.getElementById('art-title').innerText = article.title;
+                document.getElementById('art-category').innerText = article.category;
+                document.getElementById('art-date').innerText = article.date;
+                document.getElementById('art-content').innerText = article.content;
+                
+                if(article.image) {
+                    document.getElementById('art-image').src = article.image;
+                } else {
+                    document.getElementById('art-image').src = 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800';
+                }
+            } else {
+                document.getElementById('art-title').innerText = "Artikel Tidak Ditemukan";
+                document.getElementById('art-content').innerHTML = `<p class='text-center py-12 text-red-500 font-bold text-sm'>Maaf, artikel telah dihapus atau tautan salah.</p>`;
+            }
+        }
+
+        window.onload = loadArticleDetail;
+    </script>
+</body>
+</html>
