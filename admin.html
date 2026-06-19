@@ -70,7 +70,14 @@
                         <div class="grid grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-xs font-bold uppercase tracking-wider text-natural-muted mb-1.5" for="post-category">Kategori</label>
-                                <input type="text" id="post-category" required class="w-full bg-natural-clay/40 border border-natural-base/10 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-natural-blue font-medium" placeholder="Contoh: AI, PR, Marketing">
+                                <select id="post-category" required class="w-full bg-natural-clay/40 border border-natural-base/10 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-natural-blue font-medium cursor-pointer">
+                                    <option value="" disabled selected>Pilih Kategori...</option>
+                                    <option value="AI & Edukasi">AI & Edukasi</option>
+                                    <option value="Public Relations">Public Relations</option>
+                                    <option value="Digital Marketing">Digital Marketing</option>
+                                    <option value="Data Science">Data Science</option>
+                                    <option value="Sistem Informasi">Sistem Informasi</option>
+                                </select>
                             </div>
                             <div>
                                 <label class="block text-xs font-bold uppercase tracking-wider text-natural-muted mb-1.5" for="post-date">Tanggal</label>
@@ -214,7 +221,7 @@
 
         let currentImageBase64 = "";
 
-        // Fungsi Memformat Tanggal ISO (YYYY-MM-DD) ke Teks Bahasa Indonesia (Contoh: 19 Juni 2026)
+        // Fungsi Memformat Tanggal ISO (YYYY-MM-DD) ke Teks Bahasa Indonesia
         function formatDateToIndonesian(dateString) {
             if(!dateString) return "Belum ditentukan";
             const options = { day: 'numeric', month: 'long', year: 'numeric' };
@@ -242,7 +249,7 @@
 
         // Event Listener untuk memicu perubahan di Live Preview
         postTitleInput.addEventListener('input', updateLivePreview);
-        postCategoryInput.addEventListener('input', updateLivePreview);
+        postCategoryInput.addEventListener('change', updateLivePreview);
         postDateInput.addEventListener('change', updateLivePreview);
         postEditor.addEventListener('input', updateLivePreview);
 
@@ -370,11 +377,11 @@
                 formTitle.innerText = "Edit Artikel";
                 postIdInput.value = post.id;
                 postTitleInput.value = post.title;
+                
+                // Menyesuaikan nilai dropdown kategori dengan data lama
                 postCategoryInput.value = post.category;
                 
-                // Catatan: Karena disimpan dalam string teks Indonesia, reset kalender kosong atau set hari ini
-                postDateInput.value = ""; 
-
+                postDateInput.value = ""; // Reset kalender saat edit agar diinput ulang secara presisi
                 postEditor.innerHTML = post.content;
 
                 if (post.image) {
