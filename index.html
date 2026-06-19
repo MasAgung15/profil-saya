@@ -39,9 +39,42 @@
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
-<body class="bg-natural-cream text-natural-base font-sans antialiased selection:bg-natural-blue selection:text-white">
+<body class="bg-natural-cream text-natural-base font-sans antialiased selection:bg-natural-blue selection:text-white pt-20">
 
-    <section class="relative min-h-[85vh] flex items-center pt-20 pb-16 overflow-hidden bg-natural-clay/60 border-b border-natural-base/10">
+    <nav class="bg-white/80 backdrop-blur-md border-b border-natural-base/10 fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto max-w-6xl px-6 h-20 flex items-center justify-between">
+            <a href="#home" class="flex flex-col">
+                <span class="text-base font-extrabold text-natural-base tracking-tight leading-none">Agung Fazriansyah</span>
+                <span class="text-[10px] font-bold text-natural-blue uppercase tracking-widest mt-1">Portfolio</span>
+            </a>
+
+            <div class="hidden lg:flex items-center gap-1 font-semibold text-sm text-natural-muted">
+                <a href="#home" class="px-4 py-2 rounded-xl hover:text-natural-base hover:bg-natural-clay/50 transition-all">Home</a>
+                <a href="#about" class="px-4 py-2 rounded-xl hover:text-natural-base hover:bg-natural-clay/50 transition-all">About</a>
+                <a href="#gallery" class="px-4 py-2 rounded-xl hover:text-natural-base hover:bg-natural-clay/50 transition-all">Gallery</a>
+                <a href="#blog" class="px-4 py-2 rounded-xl hover:text-natural-base hover:bg-natural-clay/50 transition-all">Blog</a>
+                <a href="#research" class="px-4 py-2 rounded-xl hover:text-natural-base hover:bg-natural-clay/50 transition-all">Research</a>
+                <a href="#skills" class="px-4 py-2 rounded-xl hover:text-natural-base hover:bg-natural-clay/50 transition-all">Skills</a>
+                <a href="#contact" class="ml-2 px-5 py-2.5 bg-natural-base text-white rounded-xl hover:bg-natural-blue transition-all shadow-sm">Contact</a>
+            </div>
+
+            <button id="menu-toggle" class="lg:hidden w-10 h-10 flex items-center justify-center text-natural-base border border-natural-base/10 rounded-xl bg-natural-clay/30">
+                <i id="menu-icon" class="bi bi-list text-xl"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-natural-base/10 px-6 py-4 space-y-2 font-semibold text-sm text-natural-muted">
+            <a href="#home" class="mobile-link block p-3 rounded-xl hover:bg-natural-clay/50 hover:text-natural-base transition-all">Home</a>
+            <a href="#about" class="mobile-link block p-3 rounded-xl hover:bg-natural-clay/50 hover:text-natural-base transition-all">About</a>
+            <a href="#gallery" class="mobile-link block p-3 rounded-xl hover:bg-natural-clay/50 hover:text-natural-base transition-all">Gallery</a>
+            <a href="#blog" class="mobile-link block p-3 rounded-xl hover:bg-natural-clay/50 hover:text-natural-base transition-all">Blog</a>
+            <a href="#research" class="mobile-link block p-3 rounded-xl hover:bg-natural-clay/50 hover:text-natural-base transition-all">Research</a>
+            <a href="#skills" class="mobile-link block p-3 rounded-xl hover:bg-natural-clay/50 hover:text-natural-base transition-all">Skills</a>
+            <a href="#contact" class="mobile-link block p-3 bg-natural-base text-white text-center rounded-xl hover:bg-natural-blue transition-all mt-4">Contact</a>
+        </div>
+    </nav>
+
+    <section id="home" class="relative min-h-[85vh] flex items-center pt-20 pb-16 overflow-hidden bg-natural-clay/60 border-b border-natural-base/10">
         <div class="absolute top-0 right-0 w-96 h-96 bg-natural-blue/5 rounded-full blur-3xl -z-10"></div>
         <div class="absolute bottom-0 left-0 w-96 h-96 bg-natural-base/5 rounded-full blur-3xl -z-10"></div>
         
@@ -94,7 +127,7 @@
         </div>
     </section>
 
-    <section id="about" class="py-24 px-6 bg-natural-cream">
+    <section id="about" class="py-24 px-6 bg-natural-cream-scroll-mt-12">
         <div class="container mx-auto max-w-5xl">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-extrabold tracking-tight text-natural-base inline-block relative">
@@ -367,7 +400,7 @@
                 <a href="https://instagram.com/agung.growth" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-xl bg-white border border-natural-base/10 text-xl text-natural-base hover:bg-natural-base hover:text-white transition-all duration-300 shadow-sm">
                     <i class="bi bi-instagram"></i>
                 </a>
-                <a href="https://id.linkedin.com/in/agung-fazriansyah-1b0017119" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-xl bg-white border border-natural-base/10 text-xl text-natural-base hover:bg-natural-blue hover:text-white transition-all duration-300 shadow-sm">
+                <a href="https://id.linkedin.com/in/agung-fazriansyah-1b0017119" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-xl bg-white border border-natural-base/10 text-xl text-natural-blue hover:bg-natural-blue hover:text-white transition-all duration-300 shadow-sm">
                     <i class="bi bi-linkedin"></i>
                 </a>
                 <a href="https://scholar.google.com/citations?user=iWzIfyEAAAAJ&hl=id" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-xl bg-white border border-natural-base/10 text-xl text-natural-base hover:bg-natural-blue hover:text-white transition-all duration-300 shadow-sm">
@@ -402,12 +435,33 @@
     </footer>
 
     <script>
+        // Logika Pengendali Hamburger Menu Navigasi Mobile
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        if (menuToggle && mobileMenu && menuIcon) {
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                const isOpen = !mobileMenu.classList.contains('hidden');
+                menuIcon.className = isOpen ? "bi bi-x-lg text-xl" : "bi bi-list text-xl";
+            });
+
+            // Tutup otomatis menu dropdown saat salah satu link diklik
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.className = "bi bi-list text-xl";
+                });
+            });
+        }
+
         // Logika Pengendali Slider Gallery
         const slider = document.getElementById('gallery-slider');
         const prevBtn = document.getElementById('prev-slide');
         const nextBtn = document.getElementById('next-slide');
 
-        // Navigasi manual via tombol tombol panah kiri-kanan
         if (slider && prevBtn && nextBtn) {
             nextBtn.addEventListener('click', () => {
                 slider.scrollBy({ left: 340, behavior: 'smooth' });
@@ -416,9 +470,7 @@
                 slider.scrollBy({ left: -340, behavior: 'smooth' });
             });
 
-            // Logika slide otomatis berkala (Setiap 4 detik bergulir ke kanan)
             let autoSlide = setInterval(() => {
-                // Jika sudah mentok di paling kanan, kembali ke paling kiri awal
                 if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10) {
                     slider.scrollTo({ left: 0, behavior: 'smooth' });
                 } else {
@@ -426,7 +478,6 @@
                 }
             }, 4000);
 
-            // Matikan auto-slide sementara ketika user sedang menggeser/menyentuh slider secara manual
             slider.addEventListener('pointerdown', () => clearInterval(autoSlide));
         }
 
