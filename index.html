@@ -9,15 +9,14 @@
     <meta name="google-site-verification" content="qgWwzAW32nobnmX4x3ruNO2n-AoufXzpObTdhOnhcD8" />
     
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" rel="stylesheet">
     
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
@@ -37,137 +36,150 @@
         }
     </script>
     <style>
-        /* Sembunyikan scrollbar bawaan untuk area slide */
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        /* Efek Gradasi Mesh Premium dari Referensi V2 */
+        .mesh {
+            background:
+            radial-gradient(circle at 20% 20%, rgba(74,107,130,0.25), transparent 30%),
+            radial-gradient(circle at 80% 30%, rgba(44,74,62,0.2), transparent 30%),
+            radial-gradient(circle at 50% 80%, rgba(74,107,130,0.15), transparent 40%);
+        }
+        /* Efek Glassmorphic Sesuai File Referensi V2 */
+        .glass { backdrop-filter: blur(12px); background: rgba(255, 255, 255, 0.65); }
+        .dark .glass { background: rgba(20, 20, 20, 0.6); }
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease; }
+        .reveal.show { opacity: 1; transform: none; }
+        .masonry { columns: 3 280px; column-gap: 1.5rem; }
+        .masonry-item { break-inside: avoid; margin-bottom: 1.5rem; display: block; }
     </style>
 </head>
-<body class="bg-natural-cream text-natural-base font-sans antialiased selection:bg-natural-blue selection:text-white pt-20">
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-white font-sans antialiased selection:bg-natural-blue selection:text-white pt-20 transition-colors duration-300">
 
-    <nav class="bg-white/80 backdrop-blur-md border-b border-natural-base/10 fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-        <div class="container mx-auto max-w-6xl px-6 h-20 flex items-center justify-between">
+    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-slate-200/50 dark:border-slate-800/50 transition-all duration-300">
+        <div class="container mx-auto max-w-7xl px-6 h-20 flex items-center justify-between">
             <a href="#home" class="flex flex-col">
-                <span class="text-base font-extrabold text-natural-base tracking-tight leading-none">Agung Fazriansyah</span>
-                <span class="text-[10px] font-bold text-natural-blue uppercase tracking-widest mt-1">Portfolio</span>
+                <span class="text-base font-extrabold tracking-tight leading-none text-natural-base dark:text-white">Agung Fazriansyah</span>
+                <span class="text-[10px] font-bold text-natural-blue dark:text-emerald-400 uppercase tracking-widest mt-1">Portfolio</span>
             </a>
 
-            <div class="hidden lg:flex items-center gap-1 font-semibold text-sm text-natural-muted">
-                <a href="#home" class="px-4 py-2 rounded-xl hover:text-natural-base hover:bg-natural-clay/50 transition-all">Home</a>
-                <a href="#about" class="px-4 py-2 rounded-xl hover:text-natural-base hover:bg-natural-clay/50 transition-all">About</a>
-                <a href="#gallery" class="px-4 py-2 rounded-xl hover:text-natural-base hover:bg-natural-clay/50 transition-all">Gallery</a>
-                <a href="#blog" class="px-4 py-2 rounded-xl hover:text-natural-base hover:bg-natural-clay/50 transition-all">Blog</a>
-                <a href="#research" class="px-4 py-2 rounded-xl hover:text-natural-base hover:bg-natural-clay/50 transition-all">Research</a>
-                <a href="#skills" class="px-4 py-2 rounded-xl hover:text-natural-base hover:bg-natural-clay/50 transition-all">Skills</a>
-                <a href="#contact" class="ml-2 px-5 py-2.5 bg-natural-base text-white rounded-xl hover:bg-natural-blue transition-all shadow-sm">Contact</a>
+            <div class="hidden lg:flex items-center gap-1 font-semibold text-sm text-slate-600 dark:text-slate-300">
+                <a href="#home" class="px-4 py-2 rounded-xl hover:text-natural-base dark:hover:text-white hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all">Home</a>
+                <a href="#about" class="px-4 py-2 rounded-xl hover:text-natural-base dark:hover:text-white hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all">About</a>
+                <a href="#gallery" class="px-4 py-2 rounded-xl hover:text-natural-base dark:hover:text-white hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all">Gallery</a>
+                <a href="#blog" class="px-4 py-2 rounded-xl hover:text-natural-base dark:hover:text-white hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all">Blog</a>
+                <a href="#research" class="px-4 py-2 rounded-xl hover:text-natural-base dark:hover:text-white hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all">Research</a>
+                <a href="#skills" class="px-4 py-2 rounded-xl hover:text-natural-base dark:hover:text-white hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all">Skills</a>
+                <a href="#contact" class="ml-2 px-5 py-2.5 bg-emerald-700 text-white rounded-xl hover:bg-emerald-800 transition-all shadow-sm">Contact</a>
             </div>
 
-            <button id="menu-toggle" class="lg:hidden w-11 h-11 flex items-center justify-center text-natural-base border border-natural-base/10 rounded-xl bg-natural-clay/30 active:bg-natural-clay/70 cursor-pointer select-none" style="touch-action: manipulation; -webkit-tap-highlight-color: transparent;">
-                <i id="menu-icon" class="bi bi-list text-2xl"></i>
-            </button>
+            <div class="flex items-center gap-3">
+                <button id="themeBtn" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-200/50 dark:bg-slate-800/50 text-slate-700 dark:text-white transition-all text-lg" aria-label="Toggle Theme">
+                    <i class="bi bi-moon-stars"></i>
+                </button>
+                
+                <button id="menu-toggle" class="lg:hidden w-10 h-10 flex items-center justify-center text-slate-700 dark:text-white border border-slate-200 dark:border-slate-800 rounded-xl bg-slate-200/30 dark:bg-slate-800/30" style="touch-action: manipulation;">
+                    <i id="menu-icon" class="bi bi-list text-xl"></i>
+                </button>
+            </div>
         </div>
 
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-natural-base/10 px-6 py-4 space-y-1 font-semibold text-sm text-natural-muted shadow-lg max-h-[calc(100vh-80px)] overflow-y-auto">
-            <a href="#home" class="mobile-link block p-3 rounded-xl hover:bg-natural-clay/50 hover:text-natural-base active:bg-natural-clay transition-all" style="touch-action: manipulation;">Home</a>
-            <a href="#about" class="mobile-link block p-3 rounded-xl hover:bg-natural-clay/50 hover:text-natural-base active:bg-natural-clay transition-all" style="touch-action: manipulation;">About</a>
-            <a href="#gallery" class="mobile-link block p-3 rounded-xl hover:bg-natural-clay/50 hover:text-natural-base active:bg-natural-clay transition-all" style="touch-action: manipulation;">Gallery</a>
-            <a href="#blog" class="mobile-link block p-3 rounded-xl hover:bg-natural-clay/50 hover:text-natural-base active:bg-natural-clay transition-all" style="touch-action: manipulation;">Blog</a>
-            <a href="#research" class="mobile-link block p-3 rounded-xl hover:bg-natural-clay/50 hover:text-natural-base active:bg-natural-clay transition-all" style="touch-action: manipulation;">Research</a>
-            <a href="#skills" class="mobile-link block p-3 rounded-xl hover:bg-natural-clay/50 hover:text-natural-base active:bg-natural-clay transition-all" style="touch-action: manipulation;">Skills</a>
-            <a href="#contact" class="mobile-link block p-3 bg-natural-base text-white text-center rounded-xl hover:bg-natural-blue active:bg-natural-blue transition-all mt-3" style="touch-action: manipulation;">Contact</a>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-slate-900 border-b border-slate-200/50 dark:border-slate-800/50 px-6 py-4 space-y-2 font-semibold text-sm text-slate-600 dark:text-slate-300 shadow-xl max-h-[calc(100vh-80px)] overflow-y-auto">
+            <a href="#home" class="mobile-link block p-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" style="touch-action: manipulation;">Home</a>
+            <a href="#about" class="mobile-link block p-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" style="touch-action: manipulation;">About</a>
+            <a href="#gallery" class="mobile-link block p-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" style="touch-action: manipulation;">Gallery</a>
+            <a href="#blog" class="mobile-link block p-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" style="touch-action: manipulation;">Blog</a>
+            <a href="#research" class="mobile-link block p-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" style="touch-action: manipulation;">Research</a>
+            <a href="#skills" class="mobile-link block p-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" style="touch-action: manipulation;">Skills</a>
+            <a href="#contact" class="mobile-link block p-3 bg-emerald-700 text-white text-center rounded-xl hover:bg-emerald-800 transition-all mt-4" style="touch-action: manipulation;">Contact</a>
         </div>
     </nav>
 
-    <section id="home" class="relative min-h-[85vh] flex items-center pt-20 pb-16 overflow-hidden bg-natural-clay/60 border-b border-natural-base/10">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-natural-blue/5 rounded-full blur-3xl -z-10"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-natural-base/5 rounded-full blur-3xl -z-10"></div>
-        
-        <div class="container mx-auto px-6 max-w-6xl relative z-10">
+    <section id="home" class="mesh min-h-screen flex items-center pt-24 pb-16 overflow-hidden border-b border-slate-200/50 dark:border-slate-800/50">
+        <div class="container mx-auto px-6 max-w-7xl relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <span class="inline-flex items-center gap-1.5 bg-natural-base text-white px-4 py-2 rounded-full text-xs font-bold tracking-wider uppercase">
-                        🌿 Halo, Perkenalkan saya
+                    <span class="inline-flex items-center gap-1.5 bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-400 px-4 py-2 rounded-full text-xs font-bold tracking-wider uppercase">
+                        🌿 Halo, Perkenalkan nama saya
                     </span>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-natural-base">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-slate-900 dark:text-white">
                         Agung Fazriansyah
                     </h1>
-                    <p class="text-lg md:text-xl font-bold text-natural-blue">
-                        Lecturer • Public Relations • Digital & Marketing Communications
+                    <p class="text-base text-slate-500 dark:text-slate-400 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                        Kolaborasi dunia akademik, teknologi AI, machine learning, digital & marketing untuk menciptakan karya dan solusi yang berdampak.
                     </p>
-                    <p class="text-base md:text-lg text-natural-muted leading-relaxed max-w-xl mx-auto lg:mx-0">
-                        Kolaborasi dunia akademik, teknologi, AI machine learning, digital & marketing untuk menciptakan karya dan solusi yang berdampak.
-                    </p>
+                    <div class="flex gap-4 pt-4 justify-center lg:justify-start flex-wrap">
+                        <a href="#blog" class="px-6 py-3 bg-emerald-700 text-white font-bold rounded-xl hover:bg-emerald-800 transition-all shadow-md">Explore My Work</a>
+                        <a href="#contact" class="px-6 py-3 bg-white/80 dark:bg-slate-900/80 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 font-bold rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-all shadow-sm">Let's Collaborate</a>
+                    </div>
                 </div>
                 <div class="lg:col-span-5 flex justify-center">
-                    <div class="relative group">
-                        <div class="absolute inset-0 bg-natural-blue/10 rounded-[2.5rem] transform translate-x-3 translate-y-3 -z-10 group-hover:translate-x-1 group-hover:translate-y-1 transition-all duration-300"></div>
-                        <img src="fzr.png" class="w-[340px] max-w-full rounded-[2.5rem] border border-natural-base/10 object-cover bg-white p-3 shadow-sm" alt="Agung Fazriansyah">
+                    <div class="glass p-5 rounded-[2.5rem] shadow-2xl border border-white/20 dark:border-slate-800/40 w-full max-w-[380px]">
+                        <img src="fzr.png" class="w-full rounded-[1.8rem] object-cover bg-white/50 dark:bg-slate-900/50" alt="Agung Fazriansyah">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="relative z-10 -mt-10 px-6">
-        <div class="container mx-auto max-w-5xl">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-white border border-natural-base/10 p-6 rounded-3xl shadow-sm">
-                <div class="text-center p-2">
-                    <div class="text-3xl md:text-4xl font-extrabold text-natural-base">20+</div>
-                    <div class="text-xs md:text-sm font-bold text-natural-muted mt-1 uppercase tracking-wider">Publikasi</div>
+    <section class="relative z-10 -mt-16 px-6">
+        <div class="container mx-auto max-w-7xl">
+            <div class="glass border border-white/40 dark:border-slate-800/60 p-8 rounded-3xl shadow-xl grid grid-cols-2 md:grid-cols-4 gap-6 text-center transition-all duration-300">
+                <div class="p-2">
+                    <div class="text-4xl font-extrabold text-emerald-700 dark:text-emerald-400">20+</div>
+                    <div class="text-xs font-bold text-slate-500 dark:text-slate-400 mt-2 uppercase tracking-wider">Research Publications</div>
                 </div>
-                <div class="text-center p-2 border-l border-natural-base/10">
-                    <div class="text-3xl md:text-4xl font-extrabold text-natural-blue">5+</div>
-                    <div class="text-xs md:text-sm font-bold text-natural-muted mt-1 uppercase tracking-wider">Tahun Mengajar</div>
+                <div class="p-2 border-l border-slate-200/50 dark:border-slate-800/50">
+                    <div class="text-4xl font-extrabold text-slate-800 dark:text-white">5+</div>
+                    <div class="text-xs font-bold text-slate-500 dark:text-slate-400 mt-2 uppercase tracking-wider">Years Teaching</div>
                 </div>
-                <div class="text-center p-2 border-l border-natural-base/10">
-                    <div class="text-3xl md:text-4xl font-extrabold text-natural-base">1000+</div>
-                    <div class="text-xs md:text-sm font-bold text-natural-muted mt-1 uppercase tracking-wider">Mahasiswa</div>
+                <div class="p-2 border-l border-slate-200/50 dark:border-slate-800/50">
+                    <div class="text-4xl font-extrabold text-emerald-700 dark:text-emerald-400">1000+</div>
+                    <div class="text-xs font-bold text-slate-500 dark:text-slate-400 mt-2 uppercase tracking-wider">Students Mentored</div>
                 </div>
-                <div class="text-center p-2 border-l border-natural-base/10">
-                    <div class="text-3xl md:text-4xl font-extrabold text-natural-blue">10+</div>
-                    <div class="text-xs md:text-sm font-bold text-natural-muted mt-1 uppercase tracking-wider">Project Digital</div>
+                <div class="p-2 border-l border-slate-200/50 dark:border-slate-800/50">
+                    <div class="text-4xl font-extrabold text-slate-800 dark:text-white">10+</div>
+                    <div class="text-xs font-bold text-slate-500 dark:text-slate-400 mt-2 uppercase tracking-wider">Digital Projects</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="py-24 px-6 bg-natural-cream scroll-mt-12">
-        <div class="container mx-auto max-w-5xl">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-extrabold tracking-tight text-natural-base inline-block relative">
-                    About Me
-                    <span class="block w-12 h-1 bg-natural-blue mx-auto mt-2 rounded"></span>
-                </h2>
-            </div>
+    <section id="about" class="py-24 px-6 scroll-mt-12 reveal">
+        <div class="container mx-auto max-w-7xl">
+            <h2 class="text-4xl font-bold mb-10 text-slate-900 dark:text-white relative inline-block">
+                About Me
+                <span class="block w-12 h-1 bg-emerald-600 mt-2 rounded"></span>
+            </h2>
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                <div class="lg:col-span-7 bg-white p-8 rounded-3xl border border-natural-base/5 shadow-sm">
+                <div class="lg:col-span-7 glass p-8 rounded-3xl border border-white/20 dark:border-slate-800/40 shadow-md">
                     <div class="flex items-center gap-3 mb-4">
-                        <span class="p-2.5 bg-natural-base/5 rounded-xl text-natural-base"><i class="bi bi-person-badge-fill text-xl"></i></span>
-                        <h4 class="text-xl font-bold text-natural-base">Profil Profesional</h4>
+                        <span class="p-2.5 bg-emerald-100 dark:bg-emerald-950/50 rounded-xl text-emerald-700 dark:text-emerald-400"><i class="bi bi-person-badge-fill text-xl"></i></span>
+                        <h4 class="text-xl font-bold text-slate-900 dark:text-white">Profil Profesional</h4>
                     </div>
-                    <p class="text-natural-muted leading-relaxed text-sm md:text-base whitespace-pre-line">Saat ini aktif sebagai Dosen Program Studi Sistem Informasi Universitas Bina Sarana Informatika, sekaligus menjalankan peran strategis dalam aktivitas Public Relations dan Marketing Communication Area untuk membangun citra institusi, meningkatkan engagement masyarakat, serta mendukung pencapaian target penerimaan mahasiswa baru.
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-sm md:text-base whitespace-pre-line">Saat ini aktif sebagai Dosen Program Studi Sistem Informasi Universitas Bina Sarana Informatika, sekaligus menjalankan peran strategis dalam aktivitas Public Relations dan Marketing Communication Area untuk membangun citra institusi, meningkatkan engagement masyarakat, serta mendukung pencapaian target penerimaan mahasiswa baru.
 
                     Fokus keahlian meliputi Digital & Marketing Strategy, Branding, Event Management, Public Relations, Data Mining, dan Pengembangan Sistem Informasi berbasis teknologi digital.</p>
                 </div>
-                <div class="lg:col-span-5 bg-white p-8 rounded-3xl border border-natural-base/5 shadow-sm">
+                <div class="lg:col-span-5 glass p-8 rounded-3xl border border-white/20 dark:border-slate-800/40 shadow-md">
                     <div class="flex items-center gap-3 mb-6">
-                        <span class="p-2.5 bg-natural-blue/5 rounded-xl text-natural-blue"><i class="bi bi-mortarboard-fill text-xl"></i></span>
-                        <h4 class="text-xl font-bold text-natural-base">Pendidikan</h4>
+                        <span class="p-2.5 bg-slate-200/50 dark:bg-slate-800/50 rounded-xl text-slate-700 dark:text-slate-300"><i class="bi bi-mortarboard-fill text-xl"></i></span>
+                        <h4 class="text-xl font-bold text-slate-900 dark:text-white">Education</h4>
                     </div>
-                    <ul class="space-y-4 relative border-l border-natural-base/10 pl-4 ml-2">
+                    <ul class="space-y-5 relative border-l border-slate-200 dark:border-slate-800 pl-4 ml-2">
                         <li class="relative">
-                            <span class="absolute -left-[21px] top-1.5 w-2 h-2 bg-natural-base rounded-full ring-4 ring-natural-base/10"></span>
-                            <div class="text-sm font-bold text-natural-base">S2 Ilmu Komputer</div>
-                            <div class="text-xs text-natural-muted">Universitas Nusa Mandiri</div>
+                            <span class="absolute -left-[21px] top-1.5 w-2 h-2 bg-emerald-600 rounded-full ring-4 ring-emerald-100 dark:ring-emerald-950"></span>
+                            <div class="text-sm font-bold text-slate-900 dark:text-white">S2 Ilmu Komputer</div>
+                            <div class="text-xs text-slate-500 dark:text-slate-400">Universitas Nusa Mandiri</div>
                         </li>
                         <li class="relative">
-                            <span class="absolute -left-[21px] top-1.5 w-2 h-2 bg-natural-blue rounded-full"></span>
-                            <div class="text-sm font-bold text-natural-base">S1 Sistem Informasi</div>
-                            <div class="text-xs text-natural-muted">Universitas Nusa Mandiri</div>
+                            <span class="absolute -left-[21px] top-1.5 w-2 h-2 bg-slate-400 rounded-full"></span>
+                            <div class="text-sm font-bold text-slate-900 dark:text-white">S1 Sistem Informasi</div>
+                            <div class="text-xs text-slate-500 dark:text-slate-400">Universitas Nusa Mandiri</div>
                         </li>
                         <li class="relative">
-                            <span class="absolute -left-[21px] top-1.5 w-2 h-2 bg-natural-muted rounded-full"></span>
-                            <div class="text-sm font-bold text-natural-base">D3 Manajemen Informatika</div>
-                            <div class="text-xs text-natural-muted">Bina Sarana Informatika</div>
+                            <span class="absolute -left-[21px] top-1.5 w-2 h-2 bg-slate-300 rounded-full"></span>
+                            <div class="text-sm font-bold text-slate-900 dark:text-white">D3 Manajemen Informatika</div>
+                            <div class="text-xs text-slate-500 dark:text-slate-400">Bina Sarana Informatika</div>
                         </li>
                     </ul>
                 </div>
@@ -175,327 +187,171 @@
         </div>
     </section>
 
-    <section id="gallery" class="py-24 px-6 bg-natural-clay/30 border-y border-natural-base/5 overflow-hidden">
-        <div class="container mx-auto max-w-6xl relative">
-            <div class="flex flex-col md:flex-row justify-between items-center mb-12 gap-4">
-                <div class="text-center md:text-left">
-                    <h2 class="text-3xl font-extrabold tracking-tight text-natural-base inline-block relative">
-                        Gallery Kegiatan
-                        <span class="block w-12 h-1 bg-natural-blue mt-2 rounded mx-auto md:mx-0"></span>
-                    </h2>
-                    <p class="text-natural-muted text-sm md:text-base mt-3 max-w-md">
-                        Dokumentasi aktivitas akademis, seminar, pengajaran, relasi, dan event branding.
-                    </p>
-                </div>
-                
-                <div class="flex gap-2">
-                    <button id="prev-slide" class="w-12 h-12 flex items-center justify-center rounded-xl bg-white border border-natural-base/10 text-natural-base hover:bg-natural-base hover:text-white transition-all duration-300 shadow-sm">
-                        <i class="bi bi-chevron-left text-lg"></i>
-                    </button>
-                    <button id="next-slide" class="w-12 h-12 flex items-center justify-center rounded-xl bg-white border border-natural-base/10 text-natural-base hover:bg-natural-base hover:text-white transition-all duration-300 shadow-sm">
-                        <i class="bi bi-chevron-right text-lg"></i>
-                    </button>
-                </div>
-            </div>
-
-            <div id="gallery-slider" class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar pb-4">
-                
-                <div class="min-w-[290px] sm:min-w-[360px] max-w-[360px] snap-start bg-white rounded-2xl overflow-hidden border border-natural-base/10 shadow-sm hover:shadow-md transition-all duration-300 group flex-shrink-0">
-                    <div class="overflow-hidden aspect-video bg-gray-100">
-                        <img src="gb1.JPG" alt="Sosialisasi dan Workshop Kampus UBSI" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="p-5">
-                        <span class="text-xs font-bold text-natural-blue tracking-wider uppercase bg-natural-blue/5 px-2.5 py-1 rounded-md">Workshop</span>
-                        <h4 class="font-bold text-natural-base mt-2 line-clamp-2 text-sm">Sosialisasi Pendidikan & Teknologi di Sekolah Menengah</h4>
-                    </div>
-                </div>
-
-                <div class="min-w-[290px] sm:min-w-[360px] max-w-[360px] snap-start bg-white rounded-2xl overflow-hidden border border-natural-base/10 shadow-sm hover:shadow-md transition-all duration-300 group flex-shrink-0">
-                    <div class="overflow-hidden aspect-video bg-gray-100">
-                        <img src="gb2.JPG" alt="Kegiatan Relasi Sosial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="p-5">
-                        <span class="text-xs font-bold text-natural-base tracking-wider uppercase bg-natural-base/5 px-2.5 py-1 rounded-md">Pengabdian Masyarakat</span>
-                        <h4 class="font-bold text-natural-base mt-2 line-clamp-2 text-sm">Sesi Foto Bersama dalam Agenda Luar Kampus & Relasi Sosial</h4>
-                    </div>
-                </div>
-
-                <div class="min-w-[290px] sm:min-w-[360px] max-w-[360px] snap-start bg-white rounded-2xl overflow-hidden border border-natural-base/10 shadow-sm hover:shadow-md transition-all duration-300 group flex-shrink-0">
-                    <div class="overflow-hidden aspect-video bg-gray-100">
-                        <img src="gb3.JPG" alt="Interaksi di Ruang Kelas Bersama Mahasiswa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="p-5">
-                        <span class="text-xs font-bold text-natural-blue tracking-wider uppercase bg-natural-blue/5 px-2.5 py-1 rounded-md">Akademik</span>
-                        <h4 class="font-bold text-natural-base mt-2 line-clamp-2 text-sm">Sesi Interaktif Bersama Mahasiswa Program Studi Sistem Informasi</h4>
-                    </div>
-                </div>
-
-                <div class="min-w-[290px] sm:min-w-[360px] max-w-[360px] snap-start bg-white rounded-2xl overflow-hidden border border-natural-base/10 shadow-sm hover:shadow-md transition-all duration-300 group flex-shrink-0">
-                    <div class="overflow-hidden aspect-video bg-gray-100">
-                        <img src="gb4.JPG" alt="Poster BSI Digination Cikarang" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="p-5">
-                        <span class="text-xs font-bold text-natural-blue tracking-wider uppercase bg-natural-blue/5 px-2.5 py-1 rounded-md">Poster Event</span>
-                        <h4 class="font-bold text-natural-base mt-2 line-clamp-2 text-sm">BSI Digination - Artificial Intelligence for Education (Narasumber)</h4>
-                    </div>
-                </div>
-
-                <div class="min-w-[290px] sm:min-w-[360px] max-w-[360px] snap-start bg-white rounded-2xl overflow-hidden border border-natural-base/10 shadow-sm hover:shadow-md transition-all duration-300 group flex-shrink-0">
-                    <div class="overflow-hidden aspect-video bg-gray-100">
-                        <img src="gb5.JPG" alt="Poster Seminar Parenting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="p-5">
-                        <span class="text-xs font-bold text-natural-blue tracking-wider uppercase bg-natural-blue/5 px-2.5 py-1 rounded-md">Poster Seminar</span>
-                        <h4 class="font-bold text-natural-base mt-2 line-clamp-2 text-sm">Seminar Parenting - Cara Tembus Beasiswa PTN & PTS (Narasumber)</h4>
-                    </div>
-                </div>
-
-                <div class="min-w-[290px] sm:min-w-[360px] max-w-[360px] snap-start bg-white rounded-2xl overflow-hidden border border-natural-base/10 shadow-sm hover:shadow-md transition-all duration-300 group flex-shrink-0">
-                    <div class="overflow-hidden aspect-video bg-gray-100">
-                        <img src="gb6.JPG" alt="Poster Seminar Beyond AI Outlook 2026 Kalimalang" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="p-5">
-                        <span class="text-xs font-bold text-natural-blue tracking-wider uppercase bg-natural-blue/5 px-2.5 py-1 rounded-md">Outlook 2026</span>
-                        <h4 class="font-bold text-natural-base mt-2 line-clamp-2 text-sm">Seminar Beyond AI Outlook 2026 - UBSI Kalimalang</h4>
-                    </div>
-                </div>
-
-                <div class="min-w-[290px] sm:min-w-[360px] max-w-[360px] snap-start bg-white rounded-2xl overflow-hidden border border-natural-base/10 shadow-sm hover:shadow-md transition-all duration-300 group flex-shrink-0">
-                    <div class="overflow-hidden aspect-video bg-gray-100">
-                        <img src="gb7.JPG" alt="Poster Workshop Beyond AI Outlook 2026 Cikampek" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="p-5">
-                        <span class="text-xs font-bold text-natural-blue tracking-wider uppercase bg-natural-blue/5 px-2.5 py-1 rounded-md">Workshop AI</span>
-                        <h4 class="font-bold text-natural-base mt-2 line-clamp-2 text-sm">Workshop Beyond AI Outlook 2026 - Optimize Your Skill with AI</h4>
-                    </div>
-                </div>
-
-                <div class="min-w-[290px] sm:min-w-[360px] max-w-[360px] snap-start bg-white rounded-2xl overflow-hidden border border-natural-base/10 shadow-sm hover:shadow-md transition-all duration-300 group flex-shrink-0">
-                    <div class="overflow-hidden aspect-video bg-gray-100">
-                        <img src="gb8.JPG" alt="Uji Sertifikasi Kompetensi Dosen LSP" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="p-5">
-                        <span class="text-xs font-bold text-natural-base tracking-wider uppercase bg-natural-blue/5 px-2.5 py-1 rounded-md">Sertifikasi</span>
-                        <h4 class="font-bold text-natural-base mt-2 line-clamp-2 text-sm">Uji Sertifikasi Kompetensi Dosen LSP Universitas Bina Sarana Informatika</h4>
-                    </div>
-                </div>
-
-                <div class="min-w-[290px] sm:min-w-[360px] max-w-[360px] snap-start bg-white rounded-2xl overflow-hidden border border-natural-base/10 shadow-sm hover:shadow-md transition-all duration-300 group flex-shrink-0">
-                    <div class="overflow-hidden aspect-video bg-gray-100">
-                        <img src="gb9.JPG" alt="Kegiatan Eksternal Public Relations" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="p-5">
-                        <span class="text-xs font-bold text-natural-base tracking-wider uppercase bg-natural-base/5 px-2.5 py-1 rounded-md">Public Relations</span>
-                        <h4 class="font-bold text-natural-base mt-2 line-clamp-2 text-sm">Aktivitas Koordinasi & Strategi PR Lapangan Bersama Tim Eksternal</h4>
-                    </div>
-                </div>
-
+    <section id="skills" class="bg-white dark:bg-slate-900 py-24 px-6 border-y border-slate-200/50 dark:border-slate-800/50 reveal">
+        <div class="container mx-auto max-w-7xl">
+            <h2 class="text-4xl font-bold mb-10 text-slate-900 dark:text-white">Areas of Expertise</h2>
+            <div class="flex flex-wrap gap-3">
+                <span class="px-5 py-2.5 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm font-medium transition-all hover:border-emerald-600 dark:hover:border-emerald-400">Artificial Intelligence</span>
+                <span class="px-5 py-2.5 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm font-medium transition-all hover:border-emerald-600 dark:hover:border-emerald-400">Data Visualize</span>
+                <span class="px-5 py-2.5 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm font-medium transition-all hover:border-emerald-600 dark:hover:border-emerald-400">Digital & Marketing Strategy</span>
+                <span class="px-5 py-2.5 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm font-medium transition-all hover:border-emerald-600 dark:hover:border-emerald-400">Digital & Public Relations</span>
+                <span class="px-5 py-2.5 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm font-medium transition-all hover:border-emerald-600 dark:hover:border-emerald-400">Information Systems</span>
             </div>
         </div>
     </section>
 
-    <section id="blog" class="py-24 px-6 bg-white border-b border-natural-base/5">
-        <div class="container mx-auto max-w-5xl">
+    <section id="research" class="bg-slate-100 dark:bg-slate-950 py-24 px-6 reveal">
+        <div class="container mx-auto max-w-7xl">
+            <h2 class="text-4xl font-bold mb-10 text-slate-900 dark:text-white">Speaking Engagement</h2>
+            <div class="glass p-8 rounded-3xl border border-white/20 dark:border-slate-800/40 shadow-sm">
+                <ul class="space-y-4 font-medium text-slate-700 dark:text-slate-300">
+                    <li class="flex items-center gap-3"><i class="bi bi-mic text-emerald-600 dark:text-emerald-400"></i> 2026 - Beyond AI Outlook</li>
+                    <li class="flex items-center gap-3"><i class="bi bi-mic text-emerald-600 dark:text-emerald-400"></i> 2026 - Artificial Intelligence for Education</li>
+                    <li class="flex items-center gap-3"><i class="bi bi-mic text-emerald-600 dark:text-emerald-400"></i> 2025 - Seminar Parenting Pendidikan & Digital</li>
+                    <li class="flex items-center gap-3"><i class="bi bi-mic text-emerald-600 dark:text-emerald-400"></i> 2025 - BSI Digination</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-24 px-6 reveal">
+        <div class="container mx-auto max-w-7xl">
+            <div class="mb-10">
+                <h2 class="text-4xl font-bold text-slate-900 dark:text-white">Professional Gallery</h2>
+                <p class="text-slate-500 dark:text-slate-400 mt-2 max-w-md">Dokumentasi aktivitas akademis, seminar, pengajaran, relasi, dan event branding.</p>
+            </div>
+
+            <div class="masonry">
+                <div class="masonry-item bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/60 p-3 rounded-2xl shadow-sm"><img src="gb1.JPG" class="w-full rounded-xl" alt="Sosialisasi dan Workshop"><p class="text-xs font-bold mt-2 text-emerald-600 dark:text-emerald-400 px-1">Workshop & Sosialisasi</p></div>
+                <div class="masonry-item bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/60 p-3 rounded-2xl shadow-sm"><img src="gb2.JPG" class="w-full rounded-xl" alt="Relasi Sosial"><p class="text-xs font-bold mt-2 text-emerald-600 dark:text-emerald-400 px-1">Pengabdian Masyarakat</p></div>
+                <div class="masonry-item bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/60 p-3 rounded-2xl shadow-sm"><img src="gb3.JPG" class="w-full rounded-xl" alt="Interaksi Kelas"><p class="text-xs font-bold mt-2 text-emerald-600 dark:text-emerald-400 px-1">Akademik Mahasiswa</p></div>
+                <div class="masonry-item bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/60 p-3 rounded-2xl shadow-sm"><img src="gb4.JPG" class="w-full rounded-xl" alt="BSI Digination Poster"><p class="text-xs font-bold mt-2 text-emerald-600 dark:text-emerald-400 px-1">Poster Event AI</p></div>
+                <div class="masonry-item bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/60 p-3 rounded-2xl shadow-sm"><img src="gb5.JPG" class="w-full rounded-xl" alt="Seminar Parenting Poster"><p class="text-xs font-bold mt-2 text-emerald-600 dark:text-emerald-400 px-1">Poster Seminar Beasiswa</p></div>
+                <div class="masonry-item bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/60 p-3 rounded-2xl shadow-sm"><img src="gb6.JPG" class="w-full rounded-xl" alt="Beyond AI Outlook Poster"><p class="text-xs font-bold mt-2 text-emerald-600 dark:text-emerald-400 px-1">Outlook 2026 Kalimalang</p></div>
+                <div class="masonry-item bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/60 p-3 rounded-2xl shadow-sm"><img src="gb7.JPG" class="w-full rounded-xl" alt="Workshop AI Cikampek"><p class="text-xs font-bold mt-2 text-emerald-600 dark:text-emerald-400 px-1">Workshop Beyond AI</p></div>
+                <div class="masonry-item bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/60 p-3 rounded-2xl shadow-sm"><img src="gb8.JPG" class="w-full rounded-xl" alt="LSP Sertifikasi"><p class="text-xs font-bold mt-2 text-emerald-600 dark:text-emerald-400 px-1">Sertifikasi Kompetensi Dosen</p></div>
+                <div class="masonry-item bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/60 p-3 rounded-2xl shadow-sm"><img src="gb9.JPG" class="w-full rounded-xl" alt="Public Relations"><p class="text-xs font-bold mt-2 text-emerald-600 dark:text-emerald-400 px-1">Aktivitas Public Relations</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="bg-white dark:bg-slate-900 py-24 px-6 border-t border-slate-200/50 dark:border-slate-800/50 reveal">
+        <div class="container mx-auto max-w-7xl">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-extrabold tracking-tight text-natural-base inline-block relative">
-                    Artikel & Berita Terbaru
-                    <span class="block w-12 h-1 bg-natural-blue mx-auto mt-2 rounded"></span>
-                </h2>
-                <p class="text-natural-muted text-sm md:text-base mt-3 max-w-md mx-auto">
+                <h2 class="text-4xl font-bold text-slate-900 dark:text-white">Artikel & Berita Terbaru</h2>
+                <p class="text-slate-500 dark:text-slate-400 text-sm md:text-base mt-3 max-w-md mx-auto">
                     Berbagi insight seputar AI, Data Science, Public Relations, dan Tren Digital Komunikasi.
                 </p>
             </div>
 
             <div id="blog-container" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                </div>
+        </div>
+    </section>
+
+    <section class="bg-slate-100 dark:bg-slate-950 py-24 px-6 reveal">
+        <div class="container mx-auto max-w-7xl">
+            <h2 class="text-4xl font-bold mb-10 text-center text-slate-900 dark:text-white">Testimonials</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="glass p-6 rounded-3xl border border-white/20 dark:border-slate-800/40 shadow-sm font-medium">Pembelajaran interaktif dan mudah dipahami.</div>
+                <div class="glass p-6 rounded-3xl border border-white/20 dark:border-slate-800/40 shadow-sm font-medium">Kolaboratif dan profesional.</div>
+                <div class="glass p-6 rounded-3xl border border-white/20 dark:border-slate-800/40 shadow-sm font-medium">Aktif dalam riset dan pengembangan akademik.</div>
             </div>
         </div>
     </section>
 
-    <section id="research" class="py-24 bg-natural-cream px-6">
-        <div class="container mx-auto max-w-5xl">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-extrabold tracking-tight text-natural-base inline-block relative">
-                    Research Interest
-                    <span class="block w-12 h-1 bg-natural-base mx-auto mt-2 rounded"></span>
-                </h2>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="bg-white p-6 rounded-2xl border border-natural-base/5 text-center hover:-translate-y-1 transition-all duration-300 shadow-sm">
-                    <div class="text-3xl mb-2">🤖</div>
-                    <h5 class="font-bold text-natural-base text-sm md:text-base">Artificial Intelligence</h5>
-                </div>
-                <div class="bg-white p-6 rounded-2xl border border-natural-base/5 text-center hover:-translate-y-1 transition-all duration-300 shadow-sm">
-                    <div class="text-3xl mb-2">📊</div>
-                    <h5 class="font-bold text-natural-base text-sm md:text-base">Data Mining</h5>
-                </div>
-                <div class="bg-white p-6 rounded-2xl border border-natural-base/5 text-center hover:-translate-y-1 transition-all duration-300 shadow-sm">
-                    <div class="text-3xl mb-2">🧠</div>
-                    <h5 class="font-bold text-natural-base text-sm md:text-base">Machine Learning</h5>
-                </div>
-                <div class="bg-white p-6 rounded-2xl border border-natural-base/5 text-center hover:-translate-y-1 transition-all duration-300 shadow-sm">
-                    <div class="text-3xl mb-2">📈</div>
-                    <h5 class="font-bold text-natural-base text-sm md:text-base">Digital Marketing</h5>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="py-24 px-6 bg-white">
-        <div class="container mx-auto max-w-3xl">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-extrabold tracking-tight text-natural-blue inline-block relative">
-                    Skills
-                    <span class="block w-12 h-1 bg-natural-blue mx-auto mt-2 rounded"></span>
-                </h2>
-            </div>
-            
-            <div class="space-y-6 bg-white p-8 rounded-3xl border border-natural-base/5 shadow-sm">
-                <div>
-                    <div class="flex justify-between text-sm font-bold text-natural-base mb-2">
-                        <span>Web Development</span>
-                        <span class="text-natural-base font-extrabold">88%</span>
-                    </div>
-                    <div class="w-full bg-natural-clay h-2.5 rounded-full overflow-hidden">
-                        <div class="bg-natural-base h-full rounded-full" style="width: 88%"></div>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="flex justify-between text-sm font-bold text-natural-base mb-2">
-                        <span>AI & Machine Learning</span>
-                        <span class="text-natural-blue font-extrabold">95%</span>
-                    </div>
-                    <div class="w-full bg-natural-clay h-2.5 rounded-full overflow-hidden">
-                        <div class="bg-natural-blue h-full rounded-full" style="width: 95%"></div>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="flex justify-between text-sm font-bold text-natural-base mb-2">
-                        <span>Digital & Marketing Strategy</span>
-                        <span class="text-natural-base font-extrabold">95%</span>
-                    </div>
-                    <div class="w-full bg-natural-clay h-2.5 rounded-full overflow-hidden">
-                        <div class="bg-natural-base h-full rounded-full" style="width: 95%"></div>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="flex justify-between text-sm font-bold text-natural-base mb-2">
-                        <span>Public Relations</span>
-                        <span class="text-natural-blue font-extrabold">90%</span>
-                    </div>
-                    <div class="w-full bg-natural-clay h-2.5 rounded-full overflow-hidden">
-                        <div class="bg-natural-blue h-full rounded-full" style="width: 90%"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-16 bg-natural-clay/40 border-y border-natural-base/5 px-6">
+    <section class="py-12 bg-white dark:bg-slate-900 border-y border-slate-200/50 dark:border-slate-800/50 px-6">
         <div class="container mx-auto text-center max-w-2xl">
-            <h2 class="text-xl font-bold text-natural-base mb-8">Connect With Me</h2>
             <div class="flex justify-center flex-wrap gap-4">
-                <a href="https://github.com/MasAgung15" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-xl bg-white border border-natural-base/10 text-xl text-natural-base hover:bg-natural-base hover:text-white transition-all duration-300 shadow-sm">
-                    <i class="bi bi-github"></i>
+                <a href="https://github.com/MasAgung15" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xl text-slate-700 dark:text-white hover:bg-emerald-700 hover:text-white transition-all shadow-sm"><i class="bi bi-github"></i></a>
+                <a href="https://instagram.com/agung.growth" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xl text-slate-700 dark:text-white hover:bg-emerald-700 hover:text-white transition-all shadow-sm"><i class="bi bi-instagram"></i></a>
+                <a href="https://id.linkedin.com/in/agung-fazriansyah-1b0017119" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xl text-slate-700 dark:text-white hover:bg-emerald-700 hover:text-white transition-all shadow-sm"><i class="bi bi-linkedin"></i></a>
+                <a href="https://scholar.google.com/citations?user=iWzIfyEAAAAJ&hl=id" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xl text-slate-700 dark:text-white hover:bg-emerald-700 hover:text-white transition-all shadow-sm"><i class="bi bi-mortarboard-fill"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 px-6 bg-slate-50 dark:bg-slate-950">
+        <div class="max-w-4xl mx-auto text-center space-y-6">
+            <h2 class="text-4xl font-bold text-slate-900 dark:text-white">Let's Collaborate</h2>
+            <p class="mt-4 text-slate-600 dark:text-slate-300">Research Collaboration • Public Speaking • Training & Workshop</p>
+            <div class="mt-8 flex justify-center gap-4 flex-wrap pt-4">
+                <a href="mailto:agung.fzr@bsi.ac.id" class="px-8 py-3 bg-emerald-700 text-white font-bold rounded-xl hover:bg-emerald-800 transition-all shadow-md">
+                    Email
                 </a>
-                <a href="https://instagram.com/agung.growth" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-xl bg-white border border-natural-base/10 text-xl text-natural-base hover:bg-natural-base hover:text-white transition-all duration-300 shadow-sm">
-                    <i class="bi bi-instagram"></i>
-                </a>
-                <a href="https://id.linkedin.com/in/agung-fazriansyah-1b0017119" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-xl bg-white border border-natural-base/10 text-xl text-natural-blue hover:bg-natural-blue hover:text-white transition-all duration-300 shadow-sm">
-                    <i class="bi bi-linkedin"></i>
-                </a>
-                <a href="https://scholar.google.com/citations?user=iWzIfyEAAAAJ&hl=id" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-xl bg-white border border-natural-base/10 text-xl text-natural-base hover:bg-natural-blue hover:text-white transition-all duration-300 shadow-sm">
-                    <i class="bi bi-mortarboard-fill"></i>
+                <a href="https://wa.me/6289502072043" target="_blank" class="px-8 py-3 bg-white dark:bg-slate-900 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 font-bold rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-all shadow-sm">
+                    WhatsApp
                 </a>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-24 px-6 bg-natural-cream">
-        <div class="container mx-auto max-w-xl text-center space-y-6">
-            <h2 class="text-3xl font-extrabold text-natural-base tracking-tight">Let's Collaborate</h2>
-            <p class="text-natural-muted text-base max-w-md mx-auto">
-                Kolaborasi riset, seminar, pelatihan, dan project digital.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                <a href="mailto:agung.fzr@bsi.ac.id" class="px-8 py-3 bg-natural-base text-white font-bold rounded-xl hover:bg-natural-blue transition-all duration-300 shadow-md shadow-natural-base/10">
-                    <i class="bi bi-envelope-fill mr-2"></i> Email
-                </a>
-                <a href="https://wa.me/6289502072043" target="_blank" class="px-8 py-3 bg-white text-natural-base border border-natural-base/20 font-bold rounded-xl hover:bg-natural-clay transition-all duration-300 shadow-sm">
-                    <i class="bi bi-whatsapp mr-2 text-emerald-600"></i> WhatsApp
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-natural-base text-white py-12 px-6">
-        <div class="container mx-auto max-w-5xl text-center space-y-2">
-            <h4 class="text-lg font-bold tracking-tight">Agung Fazriansyah, M.Kom.</h4>
-            <p class="text-xs text-natural-clay/60 font-medium">Lecturer • Public Relations • Digital & Marketing Communications</p>
+    <footer class="bg-slate-950 text-white text-center py-12 px-6 border-t border-slate-900">
+        <div class="container mx-auto max-w-5xl space-y-2">
+            <h3 class="font-bold text-lg">Agung Fazriansyah, M.Kom.</h3>
+            <p class="text-xs text-slate-400">Lecturer • Digital & Public Relations • Researcher</p>
         </div>
     </footer>
 
     <script>
-        // Perbaikan Pengendali Menu Navigasi Mobile agar Kompatibel Sempurna dengan Android & iOS Touch Event
+        // 1. SISTEM DARK MODE BERDASARKAN LOCAL STORAGE DARI V2
+        const themeBtn = document.getElementById('themeBtn');
+        if (themeBtn) {
+            themeBtn.onclick = () => {
+                document.documentElement.classList.toggle('dark');
+                const isDark = document.documentElement.classList.contains('dark');
+                localStorage.theme = isDark ? 'dark' : 'light';
+                themeBtn.innerHTML = isDark ? '<i class="bi bi-sun-fill"></i>' : '<i class="bi bi-moon-stars"></i>';
+            }
+        }
+        
+        // Cek inisialisasi awal tema
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            if(themeBtn) themeBtn.innerHTML = '<i class="bi bi-sun-fill"></i>';
+        } else {
+            document.documentElement.classList.remove('dark');
+            if(themeBtn) themeBtn.innerHTML = '<i class="bi bi-moon-stars"></i>';
+        }
+
+        // 2. REVEAL ANIMASI GULIR ELEGAN (IntersectionObserver)
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('show') })
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // 3. FIX RESPONSIVITAS NAVBAR HAMBURGER (Optimal di HP Android & iOS)
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = document.getElementById('menu-icon');
         const mobileLinks = document.querySelectorAll('.mobile-link');
 
         function toggleMobileNavbar(e) {
-            if (e) e.preventDefault(); // Mencegah ghost click / double click pada perangkat mobile
+            if (e && e.type === 'touchend') e.preventDefault(); 
             if (mobileMenu && menuIcon) {
                 mobileMenu.classList.toggle('hidden');
                 const isOpen = !mobileMenu.classList.contains('hidden');
-                menuIcon.className = isOpen ? "bi bi-x-lg text-2xl" : "bi bi-list text-2xl";
+                menuIcon.className = isOpen ? "bi bi-x-lg text-xl" : "bi bi-list text-xl";
             }
         }
 
         if (menuToggle) {
-            // Menggunakan kombinasi touchend dan click untuk menjamin responsivitas kilat di iOS/Android
             menuToggle.addEventListener('touchend', toggleMobileNavbar, { passive: false });
             menuToggle.addEventListener('click', toggleMobileNavbar);
         }
 
-        // Tutup otomatis menu dropdown saat salah satu tautan jangkar diklik
         mobileLinks.forEach(link => {
-            function closeNavbar() {
+            const closeNavbar = () => {
                 if (mobileMenu && menuIcon) {
                     mobileMenu.classList.add('hidden');
-                    menuIcon.className = "bi bi-list text-2xl";
+                    menuIcon.className = "bi bi-list text-xl";
                 }
-            }
-            link.addEventListener('touchend', closeNavbar, { passive: true });
+            };
             link.addEventListener('click', closeNavbar);
+            link.addEventListener('touchend', closeNavbar, { passive: true });
         });
 
-        // Logika Pengendali Slider Gallery
-        const slider = document.getElementById('gallery-slider');
-        const prevBtn = document.getElementById('prev-slide');
-        const nextBtn = document.getElementById('next-slide');
-
-        if (slider && prevBtn && nextBtn) {
-            nextBtn.addEventListener('click', () => {
-                slider.scrollBy({ left: 340, behavior: 'smooth' });
-            });
-            prevBtn.addEventListener('click', () => {
-                slider.scrollBy({ left: -340, behavior: 'smooth' });
-            });
-
-            let autoSlide = setInterval(() => {
-                if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10) {
-                    slider.scrollTo({ left: 0, behavior: 'smooth' });
-                } else {
-                    slider.scrollBy({ left: 340, behavior: 'smooth' });
-                }
-            }, 4000);
-
-            slider.addEventListener('pointerdown', () => clearInterval(autoSlide));
-        }
-
-        // Basis Artikel default awal
+        // 4. STRUKTUR RENDER ARTIKEL BLOG DINAMIS ASLI DARI index(3).html
         const defaultPosts = [
             {
                 id: 1,
@@ -517,37 +373,37 @@
 
         function renderFrontendBlog() {
             const container = document.getElementById('blog-container');
-            if(!container) return;
+            if (!container) return;
             const posts = JSON.parse(localStorage.getItem('agung_blog_posts')) || defaultPosts;
             
             container.innerHTML = "";
 
             if(posts.length === 0) {
-                container.innerHTML = `<p class="col-span-2 text-center text-natural-muted py-8">Belum ada artikel yang dipublikasikan.</p>`;
+                container.innerHTML = `<p class="col-span-2 text-center text-slate-500 py-8">Belum ada artikel yang dipublikasikan.</p>`;
                 return;
             }
 
             posts.forEach(post => {
                 const coverImg = post.image ? post.image : 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500';
                 const card = document.createElement('article');
-                card.className = "bg-white border border-natural-base/10 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col cursor-pointer group";
+                card.className = "bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/60 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col cursor-pointer group";
                 
                 card.onclick = () => {
                     window.location.href = `detail.html?id=${post.id}`;
                 };
 
                 card.innerHTML = `
-                    <div class="aspect-video w-full bg-natural-clay overflow-hidden relative">
+                    <div class="aspect-video w-full bg-slate-100 dark:bg-slate-800 overflow-hidden relative">
                         <img src="${coverImg}" alt="${post.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500'">
                     </div>
                     <div class="p-6 flex flex-col flex-grow space-y-3">
                         <div class="flex items-center justify-between text-xs font-bold">
-                            <span class="text-natural-blue uppercase tracking-wider">${post.category}</span>
-                            <span class="text-natural-muted font-normal">${post.date}</span>
+                            <span class="text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">${post.category}</span>
+                            <span class="text-slate-400 font-normal">${post.date}</span>
                         </div>
-                        <h3 class="text-xl font-bold text-natural-base leading-snug group-hover:text-natural-blue group-hover:underline transition-colors">${post.title}</h3>
-                        <p class="text-sm text-natural-muted leading-relaxed flex-grow line-clamp-3 whitespace-pre-wrap">${post.content}</p>
-                        <div class="pt-2 text-xs font-bold text-natural-blue inline-flex items-center gap-1">
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white leading-snug group-hover:text-emerald-600 dark:group-hover:text-emerald-400 group-hover:underline transition-colors">${post.title}</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed flex-grow line-clamp-3 whitespace-pre-wrap">${post.content}</p>
+                        <div class="pt-2 text-xs font-bold text-emerald-600 dark:text-emerald-400 inline-flex items-center gap-1">
                             Baca Selengkapnya <i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform"></i>
                         </div>
                     </div>
