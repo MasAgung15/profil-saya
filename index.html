@@ -25,11 +25,11 @@
                     },
                     colors: {
                         rock: {
-                            dark: '#0C0F12',       /* Hitam Panggung Deep */
-                            card: '#161B21',       /* Card Abu Pop-Synth */
-                            neon: '#00FF7F',       /* Spring Green / Neon Pop */
-                            pink: '#FF2A7A',       /* Cyber Pink Aksen */
-                            border: '#222B35'
+                            dark: '#0A0A0A',       /* Next.js Jet Black */
+                            card: '#141414',       /* Vercel Premium Dark Card */
+                            neon: '#FFFFFF',       /* Monochromatic Minimalist */
+                            pink: '#0070F3',       /* Next.js Accent Blue */
+                            border: '#262626'
                         }
                     }
                 }
@@ -40,200 +40,192 @@
         body { font-family: 'Poppins', sans-serif; }
         .font-display { font-family: 'Poppins', sans-serif; }
         
-        /* Rock n Roll Synth-Pop Stage Background */
+        /* Next.js Mesh Gradient Radiance Style */
         .mesh {
             background: 
-                radial-gradient(circle at 15% 20%, rgba(0, 255, 127, 0.15), transparent 45%),
-                radial-gradient(circle at 85% 75%, rgba(255, 42, 122, 0.12), transparent 45%),
-                radial-gradient(circle at 50% 50%, #0C0F12, #06080A);
+                radial-gradient(ellipse at top, rgba(255, 255, 255, 0.03), transparent 50%),
+                radial-gradient(circle at 85% 75%, rgba(0, 112, 243, 0.05), transparent 40%),
+                #0A0A0A;
         }
         
-        /* Tema Terang Penyesuaian Mesh */
         html:not(.dark) .mesh {
             background: 
-                radial-gradient(circle at 15% 20%, rgba(0, 255, 127, 0.1), transparent 45%),
-                radial-gradient(circle at 85% 75%, rgba(255, 42, 122, 0.08), transparent 45%),
-                radial-gradient(circle at 50% 50%, #F8FAFC, #E2E8F0);
+                radial-gradient(ellipse at top, rgba(0, 0, 0, 0.02), transparent 50%),
+                radial-gradient(circle at 85% 75%, rgba(0, 112, 243, 0.03), transparent 40%),
+                #FAFAFA;
         }
         
-        /* Glassmorphism Backstage Style */
-        .glass { backdrop-filter: blur(16px); background: rgba(22, 27, 33, 0.8); }
-        html:not(.dark) .glass { background: rgba(248, 250, 252, 0.8); }
+        /* Ultra Glassmorphism Minimal Navbar */
+        .glass { backdrop-filter: blur(12px); background: rgba(10, 10, 10, 0.75); }
+        html:not(.dark) .glass { background: rgba(250, 250, 250, 0.75); }
         
-        .reveal { opacity: 0; transform: translateY(25px); transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1); }
+        .reveal { opacity: 0; transform: translateY(16px); transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
         .reveal.show { opacity: 1; transform: none; }
         
-        /* Animasi Mengambang Gambar (Floating) Halus */
+        /* Micro Floating Interaction */
         @keyframes rockPopFloat {
-            0% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-12px) rotate(1.5deg); }
-            100% { transform: translateY(0px) rotate(0deg); }
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+            100% { transform: translateY(0px); }
         }
         .animate-rock-float {
-            animation: rockPopFloat 5s ease-in-out infinite;
+            animation: rockPopFloat 6s ease-in-out infinite;
         }
 
-        /* Animasi Getar Goyang (Shake & Roll) Saat Tombol Skill Diklik */
+        /* Vercel Click Scale Feedback Interaction */
         @keyframes rockShake {
-            0% { transform: translateX(0) rotate(0deg); }
-            15% { transform: translateX(-6px) rotate(-4deg); }
-            30% { transform: translateX(5px) rotate(3deg); }
-            45% { transform: translateX(-4px) rotate(-2deg); }
-            60% { transform: translateX(3px) rotate(2deg); }
-            75% { transform: translateX(-1px) rotate(-1deg); }
-            100% { transform: translateX(0) rotate(0deg); }
+            0% { transform: scale(1); }
+            50% { transform: scale(0.97); }
+            100% { transform: scale(1); }
         }
         .animate-rock-shake {
-            animation: rockShake 0.5s ease-in-out;
+            animation: rockShake 0.2s ease-in-out;
         }
 
-        /* Pola grid pop halus */
+        /* Next.js Signature Fine Linear Grid Background Pattern */
         .pop-grid {
-            background-image: radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 0);
-            background-size: 24px 24px;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+            background-size: 32px 32px;
         }
         html:not(.dark) .pop-grid {
-            background-image: radial-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 0);
+            background-image: linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 dark:bg-rock-dark dark:text-slate-200 font-sans antialiased selection:bg-rock-neon selection:text-black pt-20 pop-grid">
+<body class="bg-[#FAFAFA] text-[#171717] dark:bg-rock-dark dark:text-[#EDEDED] font-sans antialiased selection:bg-[#EAEAEA] selection:text-black pt-20 pop-grid">
 
-    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-black/5 dark:border-white/5 transition-all duration-300">
-        <div class="container mx-auto max-w-7xl px-6 h-20 flex items-center justify-between">
+    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-neutral-200/50 dark:border-neutral-800/50 transition-all duration-300">
+        <div class="container mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
             <div></div>
 
-            <div class="hidden lg:flex items-center gap-1 font-semibold text-xs tracking-wider uppercase text-slate-600 dark:text-slate-400">
-                <a href="#home" class="px-4 py-2 rounded-xl hover:text-slate-900 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 transition-all">Home</a>
-                <a href="#about" class="px-4 py-2 rounded-xl hover:text-slate-900 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 transition-all">About</a>
-                <a href="#gallery" class="px-4 py-2 rounded-xl hover:text-slate-900 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 transition-all">Gallery</a>
-                <a href="#blog" class="px-4 py-2 rounded-xl hover:text-slate-900 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 transition-all">Blog</a>
-                <a href="#skills" class="px-4 py-2 rounded-xl hover:text-slate-900 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 transition-all">Skills</a>
-                <a href="#contact" class="ml-4 px-5 py-2.5 bg-gradient-to-r from-rock-neon to-emerald-400 text-black font-black rounded-full hover:shadow-[0_0_20px_rgba(0,255,127,0.4)] hover:scale-105 active:scale-95 transition-all">Contact</a>
+            <div class="hidden lg:flex items-center gap-1 font-medium text-sm tracking-tight text-neutral-600 dark:text-neutral-400">
+                <a href="#home" class="px-3 py-1.5 rounded-md hover:text-black dark:hover:text-white transition-all">Home</a>
+                <a href="#about" class="px-3 py-1.5 rounded-md hover:text-black dark:hover:text-white transition-all">About</a>
+                <a href="#gallery" class="px-3 py-1.5 rounded-md hover:text-black dark:hover:text-white transition-all">Gallery</a>
+                <a href="#blog" class="px-3 py-1.5 rounded-md hover:text-black dark:hover:text-white transition-all">Blog</a>
+                <a href="#skills" class="px-3 py-1.5 rounded-md hover:text-black dark:hover:text-white transition-all">Skills</a>
+                <a href="#contact" class="ml-2 px-4 py-1.5 bg-black dark:bg-white text-white dark:text-black font-medium text-xs rounded-md border border-neutral-800 dark:border-neutral-200 hover:bg-neutral-900 dark:hover:bg-neutral-100 transition-all">Contact</a>
             </div>
 
             <div class="flex items-center gap-3">
-                <button id="themeBtn" class="w-10 h-10 flex items-center justify-center rounded-xl bg-black/5 dark:bg-white/5 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-all text-base" aria-label="Toggle Theme">
+                <button id="themeBtn" class="w-9 h-9 flex items-center justify-center rounded-md bg-transparent border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-all text-sm" aria-label="Toggle Theme">
                     <i class="bi bi-sun-fill hidden dark:block"></i>
                     <i class="bi bi-moon-stars-fill block dark:hidden"></i>
                 </button>
                 
-                <button id="menu-toggle" class="lg:hidden w-10 h-10 flex items-center justify-center text-slate-800 dark:text-white border border-black/10 dark:border-white/10 rounded-xl bg-black/5 dark:bg-white/5">
+                <button id="menu-toggle" class="lg:hidden w-9 h-9 flex items-center justify-center text-neutral-800 dark:text-neutral-200 border border-neutral-200 dark:border-neutral-800 rounded-md bg-transparent">
                     <i id="menu-icon" class="bi bi-list text-xl"></i>
                 </button>
             </div>
         </div>
 
-        <div id="mobile-menu" class="hidden lg:hidden bg-white/95 dark:bg-rock-dark/95 border-b border-black/10 dark:border-white/10 px-6 py-4 space-y-2 font-bold text-xs uppercase tracking-wider text-slate-700 dark:text-slate-300 shadow-2xl">
-            <a href="#home" class="mobile-link block p-3 rounded-xl hover:bg-black/5 dark:hover:bg-white/5">Home</a>
-            <a href="#about" class="mobile-link block p-3 rounded-xl hover:bg-black/5 dark:hover:bg-white/5">About</a>
-            <a href="#gallery" class="mobile-link block p-3 rounded-xl hover:bg-black/5 dark:hover:bg-white/5">Gallery</a>
-            <a href="#blog" class="mobile-link block p-3 rounded-xl hover:bg-black/5 dark:hover:bg-white/5">Blog</a>
-            <a href="#skills" class="mobile-link block p-3 rounded-xl hover:bg-black/5 dark:hover:bg-white/5">Skills</a>
-            <a href="#contact" class="mobile-link block p-3 bg-rock-neon text-black text-center font-black rounded-full transition-all mt-4">Contact</a>
+        <div id="mobile-menu" class="hidden lg:hidden bg-[#FAFAFA]/95 dark:bg-rock-dark/95 border-b border-neutral-200 dark:border-neutral-800 px-6 py-4 space-y-1 font-medium text-sm text-neutral-700 dark:text-neutral-300 shadow-xl">
+            <a href="#home" class="mobile-link block p-2 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-900">Home</a>
+            <a href="#about" class="mobile-link block p-2 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-900">About</a>
+            <a href="#gallery" class="mobile-link block p-2 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-900">Gallery</a>
+            <a href="#blog" class="mobile-link block p-2 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-900">Blog</a>
+            <a href="#skills" class="mobile-link block p-2 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-900">Skills</a>
+            <a href="#contact" class="mobile-link block p-2 bg-black dark:bg-white text-white dark:text-black text-center rounded-md transition-all mt-4">Contact</a>
         </div>
     </nav>
 
-    <section id="home" class="mesh min-h-screen flex items-center pt-24 pb-16 overflow-hidden border-b border-black/5 dark:border-white/5">
+    <section id="home" class="mesh min-h-[85vh] flex items-center pt-16 pb-12 border-b border-neutral-200 dark:border-neutral-800">
         <div class="container mx-auto px-6 max-w-7xl relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
                     <div class="inline-flex flex-wrap items-center gap-2">
-                        <a href="https://dicocommunity.org/" target="_blank" class="inline-flex items-center gap-1 bg-rock-pink/10 border border-rock-pink/30 text-rock-pink hover:bg-rock-pink/20 px-3 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase transition-all">
+                        <a href="https://dicocommunity.org/" target="_blank" class="inline-flex items-center gap-1 bg-[#0070F3]/5 border border-[#0070F3]/20 text-[#0070F3] dark:text-[#3291FF] dark:bg-[#3291FF]/5 px-3 py-1 rounded-full text-xs font-medium tracking-tight transition-all">
                             🤝 Partner of DICO <i class="bi bi-box-arrow-up-right text-[10px]"></i>
                         </a>
                     </div>
                     
-                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-display font-black tracking-tight leading-none text-slate-900 dark:text-white">
-                        Agung <span class="text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-slate-600 to-emerald-600 dark:from-white dark:via-slate-200 dark:to-rock-neon">Fazriansyah</span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight leading-tight text-black dark:text-white">
+                        Agung <span class="text-transparent bg-clip-text bg-gradient-to-r from-black via-neutral-700 to-neutral-500 dark:from-white dark:via-neutral-200 dark:to-neutral-400">Fazriansyah</span>
                     </h1>
-                    <p class="text-xl md:text-2xl font-semibold tracking-tight text-slate-700 dark:text-slate-300">
+                    <p class="text-lg md:text-xl font-medium tracking-tight text-neutral-700 dark:text-neutral-300">
                         Lecturer • Maketing & Communications • Creative Writer Idea
                     </p>
-                    <p class="text-base text-slate-600 dark:text-slate-400 leading-relaxed max-w-xl mx-auto lg:mx-0 font-medium">
+                    <p class="text-sm md:text-base text-neutral-500 dark:text-neutral-400 leading-relaxed max-w-xl mx-auto lg:mx-0 font-normal">
                         Kolaborasi dunia akademik, teknologi, AI machine learning, digital & marketing untuk menciptakan karya dan solusi yang berdampak.
                     </p>
-                    <div class="flex gap-4 pt-4 justify-center lg:justify-start flex-wrap">
-                        <a href="#gallery" class="px-6 py-3.5 bg-slate-900 dark:bg-white text-white dark:text-black font-extrabold uppercase tracking-wider text-xs rounded-full hover:bg-rock-neon hover:text-black dark:hover:bg-rock-neon transition-all shadow-lg">Explore My Work</a>
-                        <a href="#contact" class="px-6 py-3.5 bg-transparent text-slate-800 dark:text-white border-2 border-black/10 dark:border-white/10 font-extrabold uppercase tracking-wider text-xs rounded-full hover:bg-black/5 dark:hover:bg-white/5 hover:border-black dark:hover:border-white transition-all">Let's Collaborate</a>
+                    <div class="flex gap-3 pt-2 justify-center lg:justify-start flex-wrap">
+                        <a href="#gallery" class="px-5 py-2.5 bg-black dark:bg-white text-white dark:text-black font-medium tracking-tight text-xs rounded-md hover:bg-neutral-900 dark:hover:bg-neutral-100 transition-all border border-neutral-800 dark:border-neutral-200 shadow-sm">Explore My Work</a>
+                        <a href="#contact" class="px-5 py-2.5 bg-transparent text-neutral-800 dark:text-white border border-neutral-200 dark:border-neutral-800 font-medium tracking-tight text-xs rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-all">Let's Collaborate</a>
                     </div>
                 </div>
                 
                 <div class="lg:col-span-5 flex justify-center">
-                    <div class="bg-white dark:bg-rock-card p-4 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-black/5 dark:border-white/10 w-full max-w-[360px] animate-rock-float">
-                        <img src="fzr.png" class="w-full h-auto rounded-[2rem] hover:scale-[1.02] transition-all duration-750 bg-slate-100 dark:bg-rock-dark border border-black/5 dark:border-white/5" alt="Agung Fazriansyah">
+                    <div class="bg-white dark:bg-rock-card p-2 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] border border-neutral-200 dark:border-neutral-800 w-full max-w-[320px] animate-rock-float">
+                        <img src="fzr.png" class="w-full h-auto rounded-lg bg-[#FAFAFA] dark:bg-rock-dark border border-neutral-100 dark:border-neutral-900" alt="Agung Fazriansyah">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="relative z-10 -mt-12 px-6">
-        <div class="container mx-auto max-w-7xl">
-            <div class="bg-white dark:bg-rock-card border border-black/5 dark:border-white/10 p-8 rounded-3xl shadow-2xl grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                <div class="p-2">
-                    <div class="text-4xl font-display font-bold text-emerald-600 dark:text-rock-neon">20+</div>
-                    <div class="text-[10px] font-bold text-slate-500 dark:text-slate-400 mt-2 uppercase tracking-widest">Publikasi Riset</div>
+    <section class="relative z-10 -mt-8 px-6">
+        <div class="container mx-auto max-w-5xl">
+            <div class="bg-white dark:bg-rock-card border border-neutral-200 dark:border-neutral-800 py-6 px-4 rounded-xl shadow-sm grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="p-1">
+                    <div class="text-2xl font-semibold text-black dark:text-white tracking-tight">20+</div>
+                    <div class="text-[11px] font-medium text-neutral-400 dark:text-neutral-500 mt-1 tracking-tight">Publikasi Riset</div>
                 </div>
-                <div class="p-2 border-l border-black/5 dark:border-white/5">
-                    <div class="text-4xl font-display font-bold text-slate-800 dark:text-white">5+</div>
-                    <div class="text-[10px] font-bold text-slate-500 dark:text-slate-400 mt-2 uppercase tracking-widest">Tahun Mengajar</div>
+                <div class="p-1 border-l border-neutral-200 dark:border-neutral-800">
+                    <div class="text-2xl font-semibold text-black dark:text-white tracking-tight">5+</div>
+                    <div class="text-[11px] font-medium text-neutral-400 dark:text-neutral-500 mt-1 tracking-tight">Tahun Mengajar</div>
                 </div>
-                <div class="p-2 border-l border-black/5 dark:border-white/5">
-                    <div class="text-4xl font-display font-bold text-emerald-600 dark:text-rock-neon">100+</div>
-                    <div class="text-[10px] font-bold text-slate-500 dark:text-slate-400 mt-2 uppercase tracking-widest">Mahasiswa</div>
+                <div class="p-1 border-l border-neutral-200 dark:border-neutral-800">
+                    <div class="text-2xl font-semibold text-black dark:text-white tracking-tight">100+</div>
+                    <div class="text-[11px] font-medium text-neutral-400 dark:text-neutral-500 mt-1 tracking-tight">Mahasiswa</div>
                 </div>
-                <div class="p-2 border-l border-black/5 dark:border-white/5">
-                    <div class="text-4xl font-display font-bold text-slate-800 dark:text-white">10+</div>
-                    <div class="text-[10px] font-bold text-slate-500 dark:text-slate-400 mt-2 uppercase tracking-widest">Project Digital</div>
+                <div class="p-1 border-l border-neutral-200 dark:border-neutral-800">
+                    <div class="text-2xl font-semibold text-black dark:text-white tracking-tight">10+</div>
+                    <div class="text-[11px] font-medium text-neutral-400 dark:text-neutral-500 mt-1 tracking-tight">Project Digital</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="py-28 px-6 scroll-mt-12 reveal">
-        <div class="container mx-auto max-w-7xl">
-            <h2 class="text-4xl font-display font-bold uppercase mb-12 text-slate-900 dark:text-white relative inline-block tracking-tight">
+    <section id="about" class="py-20 px-6 scroll-mt-12 reveal">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-2xl font-display font-bold mb-8 text-black dark:text-white tracking-tight">
                 About Me
-                <span class="block w-16 h-1.5 bg-gradient-to-r from-emerald-500 to-rock-neon mt-2 rounded-full"></span>
             </h2>
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                <div class="lg:col-span-7 bg-white dark:bg-rock-card p-8 rounded-3xl border border-black/5 dark:border-white/5 shadow-lg relative overflow-hidden">
-                    <div class="absolute top-0 left-0 w-1.5 h-full bg-emerald-500 dark:bg-rock-neon"></div>
-                    <div class="flex items-center gap-3 mb-6">
-                        <span class="p-2.5 bg-black/5 dark:bg-white/5 text-emerald-600 dark:text-rock-neon rounded-xl border border-black/10 dark:border-white/10"><i class="bi bi-person-badge-fill text-xl"></i></span>
-                        <h4 class="text-lg font-display font-bold text-slate-900 dark:text-white">Profil Profesional</h4>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                <div class="lg:col-span-7 bg-white dark:bg-rock-card p-6 rounded-xl border border-neutral-200 dark:border-neutral-800 shadow-sm relative overflow-hidden">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="text-neutral-800 dark:text-neutral-200"><i class="bi bi-person-badge-fill text-base"></i></span>
+                        <h4 class="text-sm font-bold text-black dark:text-white tracking-tight">Profil Profesional</h4>
                     </div>
-                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-sm md:text-base whitespace-pre-line font-medium">Saat ini aktif sebagai Dosen Program Studi Sistem Informasi (S1) Universitas Bina Sarana Informatika (UBSI), sekaligus menjalankan peran strategis dalam aktivitas Digital Public Relations dan Marketing Communication Area untuk membantu membangun citra institusi, meningkatkan engagement masyarakat, serta mendukung pencapaian target penerimaan mahasiswa baru.</p>
+                    <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed text-sm whitespace-pre-line font-normal">Saat ini aktif sebagai Dosen Program Studi Sistem Informasi (S1) Universitas Bina Sarana Informatika (UBSI), sekaligus menjalankan peran strategis dalam aktivitas Digital Public Relations dan Marketing Communication Area untuk membantu membangun citra institusi, meningkatkan engagement masyarakat, serta mendukung pencapaian target penerimaan mahasiswa baru.</p>
                 </div>
-                <div class="lg:col-span-5 bg-white dark:bg-rock-card p-8 rounded-3xl border border-black/5 dark:border-white/5 shadow-lg relative overflow-hidden">
-                    <div class="absolute top-0 left-0 w-1.5 h-full bg-rock-pink"></div>
-                    <div class="flex items-center gap-3 mb-6">
-                        <span class="p-2.5 bg-black/5 dark:bg-white/5 text-rock-pink rounded-xl border border-black/10 dark:border-white/10"><i class="bi bi-mortarboard-fill text-xl"></i></span>
-                        <h4 class="text-lg font-display font-bold text-slate-900 dark:text-white">Pendidikan</h4>
+                <div class="lg:col-span-5 bg-white dark:bg-rock-card p-6 rounded-xl border border-neutral-200 dark:border-neutral-800 shadow-sm relative overflow-hidden">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="text-neutral-800 dark:text-neutral-200"><i class="bi bi-mortarboard-fill text-base"></i></span>
+                        <h4 class="text-sm font-bold text-black dark:text-white tracking-tight">Pendidikan</h4>
                     </div>
-                    <ul class="space-y-6 relative border-l-2 border-black/5 dark:border-white/5 pl-5 ml-2">
+                    <ul class="space-y-4 relative border-l border-neutral-200 dark:border-neutral-800 pl-4 ml-1">
                         <li class="relative">
-                            <span class="absolute -left-[25px] top-1.5 w-2 h-2 bg-emerald-500 dark:bg-rock-neon ring-4 ring-emerald-500/20 dark:ring-rock-neon/20 rounded-full"></span>
-                            <div class="text-sm font-bold text-slate-900 dark:text-white tracking-wide">S2 Ilmu Komputer</div>
-                            <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Universitas Nusa Mandiri</div>
-                            <a href="https://www.nusamandiri.ac.id" target="_blank" class="inline-flex items-center gap-1 mt-1.5 px-3 py-1 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-[10px] font-bold uppercase rounded-md text-slate-700 dark:text-slate-300 hover:bg-rock-neon hover:text-black dark:hover:bg-rock-neon dark:hover:text-black transition-all">
+                            <span class="absolute -left-[20px] top-1.5 w-1.5 h-1.5 bg-neutral-800 dark:bg-neutral-200 rounded-full"></span>
+                            <div class="text-xs font-bold text-black dark:text-white tracking-tight">S2 Ilmu Komputer</div>
+                            <div class="text-[11px] text-neutral-400 dark:text-neutral-500 mt-0.5">Universitas Nusa Mandiri</div>
+                            <a href="https://www.nusamandiri.ac.id" target="_blank" class="inline-flex items-center gap-1 mt-1 text-[10px] text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-all">
                                 Website <i class="bi bi-box-arrow-up-right"></i>
                             </a>
                         </li>
                         <li class="relative">
-                            <span class="absolute -left-[25px] top-1.5 w-2 h-2 bg-slate-400 rounded-full"></span>
-                            <div class="text-sm font-bold text-slate-700 dark:text-slate-200 tracking-wide">S1 Sistem Informasi</div>
-                            <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Universitas Nusa Mandiri</div>
-                            <a href="https://www.nusamandiri.ac.id" target="_blank" class="inline-flex items-center gap-1 mt-1.5 px-3 py-1 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-[10px] font-bold uppercase rounded-md text-slate-700 dark:text-slate-300 hover:bg-rock-neon hover:text-black dark:hover:bg-rock-neon dark:hover:text-black transition-all">
+                            <span class="absolute -left-[20px] top-1.5 w-1.5 h-1.5 bg-neutral-400 rounded-full"></span>
+                            <div class="text-xs font-bold text-neutral-700 dark:text-neutral-300 tracking-tight">S1 Sistem Informasi</div>
+                            <div class="text-[11px] text-neutral-400 dark:text-neutral-500 mt-0.5">Universitas Nusa Mandiri</div>
+                            <a href="https://www.nusamandiri.ac.id" target="_blank" class="inline-flex items-center gap-1 mt-1 text-[10px] text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-all">
                                 Website <i class="bi bi-box-arrow-up-right"></i>
                             </a>
                         </li>
                         <li class="relative">
-                            <span class="absolute -left-[25px] top-1.5 w-2 h-2 bg-slate-300 dark:bg-slate-600 rounded-full"></span>
-                            <div class="text-sm font-bold text-slate-600 dark:text-slate-300 tracking-wide">D3 Manajemen Informatika</div>
-                            <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Bina Sarana Informatika</div>
-                            <a href="https://www.bsi.ac.id" target="_blank" class="inline-flex items-center gap-1 mt-1.5 px-3 py-1 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-[10px] font-bold uppercase rounded-md text-slate-700 dark:text-slate-300 hover:bg-rock-neon hover:text-black dark:hover:bg-rock-neon dark:hover:text-black transition-all">
+                            <span class="absolute -left-[20px] top-1.5 w-1.5 h-1.5 bg-neutral-300 dark:bg-neutral-700 rounded-full"></span>
+                            <div class="text-xs font-bold text-neutral-600 dark:text-neutral-400 tracking-tight">D3 Manajemen Informatika</div>
+                            <div class="text-[11px] text-neutral-400 dark:text-neutral-500 mt-0.5">Bina Sarana Informatika</div>
+                            <a href="https://www.bsi.ac.id" target="_blank" class="inline-flex items-center gap-1 mt-1 text-[10px] text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-all">
                                 Website <i class="bi bi-box-arrow-up-right"></i>
                             </a>
                         </li>
@@ -243,161 +235,161 @@
         </div>
     </section>
 
-    <section id="gallery" class="py-28 px-6 bg-black/[0.02] dark:bg-black/20 border-y border-black/5 dark:border-white/5 reveal scroll-mt-12">
-        <div class="container mx-auto max-w-7xl">
-            <div class="mb-12 text-center lg:text-left">
-                <h2 class="text-4xl font-display font-bold uppercase text-slate-900 dark:text-white tracking-tight">Gallery Kegiatan</h2>
-                <p class="text-slate-500 dark:text-slate-400 text-sm mt-2 max-w-md font-medium">Dokumentasi aktivitas akademis, seminar, pengajaran, relasi, dan event branding.</p>
+    <section id="gallery" class="py-20 px-6 bg-neutral-50 dark:bg-[#111111] border-y border-neutral-200 dark:border-neutral-800 reveal scroll-mt-12">
+        <div class="container mx-auto max-w-6xl">
+            <div class="mb-8 text-center lg:text-left">
+                <h2 class="text-2xl font-display font-bold text-black dark:text-white tracking-tight">Gallery Kegiatan</h2>
+                <p class="text-neutral-400 dark:text-neutral-500 text-xs mt-1 font-normal">Dokumentasi aktivitas akademis, seminar, pengajaran, relasi, dan event branding.</p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="group bg-white dark:bg-rock-card border border-black/5 dark:border-white/5 p-3 rounded-2xl shadow-md hover:border-emerald-500/50 dark:hover:border-rock-neon/50 transition-all duration-300 hover:-translate-y-2">
-                    <div class="overflow-hidden rounded-xl aspect-video bg-slate-900 relative">
-                        <img src="gb1.JPG" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500" alt="Sosialisasi dan Workshop">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                <div class="group bg-white dark:bg-rock-card border border-neutral-200 dark:border-neutral-800 p-2 rounded-xl shadow-sm transition-all duration-300 hover:border-neutral-300 dark:hover:border-neutral-700">
+                    <div class="overflow-hidden rounded-md aspect-video bg-neutral-100 dark:bg-neutral-900 relative">
+                        <img src="gb1.JPG" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" alt="Sosialisasi dan Workshop">
                     </div>
-                    <p class="text-[10px] font-bold mt-3 text-emerald-600 dark:text-rock-neon uppercase tracking-widest">Workshop</p>
-                    <h4 class="text-sm font-bold mt-1 text-slate-900 dark:text-white line-clamp-2">Sosialisasi Pendidikan & Teknologi di Sekolah Menengah</h4>
+                    <p class="text-[10px] font-medium mt-2.5 text-neutral-400 dark:text-neutral-500 tracking-tight">Workshop</p>
+                    <h4 class="text-xs font-semibold mt-0.5 text-black dark:text-white line-clamp-2 leading-snug">Sosialisasi Pendidikan & Teknologi di Sekolah Menengah</h4>
                 </div>
-                <div class="group bg-white dark:bg-rock-card border border-black/5 dark:border-white/5 p-3 rounded-2xl shadow-md hover:border-black/10 dark:hover:border-white/20 transition-all duration-300 hover:-translate-y-2">
-                    <div class="overflow-hidden rounded-xl aspect-video bg-slate-900 relative">
-                        <img src="gb2.JPG" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500" alt="Relasi Sosial">
+                <div class="group bg-white dark:bg-rock-card border border-neutral-200 dark:border-neutral-800 p-2 rounded-xl shadow-sm transition-all duration-300 hover:border-neutral-300 dark:hover:border-neutral-700">
+                    <div class="overflow-hidden rounded-md aspect-video bg-neutral-100 dark:bg-neutral-900 relative">
+                        <img src="gb2.JPG" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" alt="Relasi Sosial">
                     </div>
-                    <p class="text-[10px] font-bold mt-3 text-slate-500 dark:text-slate-400 uppercase tracking-widest">Pengabdian Masyarakat</p>
-                    <h4 class="text-sm font-bold mt-1 text-slate-900 dark:text-white line-clamp-2">Sesi Foto Bersama dalam Agenda Luar Kampus & Relasi Sosial</h4>
+                    <p class="text-[10px] font-medium mt-2.5 text-neutral-400 dark:text-neutral-500 tracking-tight">Pengabdian Masyarakat</p>
+                    <h4 class="text-xs font-semibold mt-0.5 text-black dark:text-white line-clamp-2 leading-snug">Sesi Foto Bersama dalam Agenda Luar Kampus & Relasi Sosial</h4>
                 </div>
-                <div class="group bg-white dark:bg-rock-card border border-black/5 dark:border-white/5 p-3 rounded-2xl shadow-md hover:border-emerald-500/50 dark:hover:border-rock-neon/50 transition-all duration-300 hover:-translate-y-2">
-                    <div class="overflow-hidden rounded-xl aspect-video bg-slate-900 relative">
-                        <img src="gb3.JPG" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500" alt="Interaksi Kelas">
+                <div class="group bg-white dark:bg-rock-card border border-neutral-200 dark:border-neutral-800 p-2 rounded-xl shadow-sm transition-all duration-300 hover:border-neutral-300 dark:hover:border-neutral-700">
+                    <div class="overflow-hidden rounded-md aspect-video bg-neutral-100 dark:bg-neutral-900 relative">
+                        <img src="gb3.JPG" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" alt="Interaksi Kelas">
                     </div>
-                    <p class="text-[10px] font-bold mt-3 text-emerald-600 dark:text-rock-neon uppercase tracking-widest">Akademik</p>
-                    <h4 class="text-sm font-bold mt-1 text-slate-900 dark:text-white line-clamp-2">Sesi Interaktif Bersama Mahasiswa Program Studi Sistem Informasi</h4>
+                    <p class="text-[10px] font-medium mt-2.5 text-neutral-400 dark:text-neutral-500 tracking-tight">Akademik</p>
+                    <h4 class="text-xs font-semibold mt-0.5 text-black dark:text-white line-clamp-2 leading-snug">Sesi Interaktif Bersama Mahasiswa Program Studi Sistem Informasi</h4>
                 </div>
-                <div class="group bg-white dark:bg-rock-card border border-black/5 dark:border-white/5 p-3 rounded-2xl shadow-md hover:border-black/10 dark:hover:border-white/20 transition-all duration-300 hover:-translate-y-2">
-                    <div class="overflow-hidden rounded-xl aspect-video bg-slate-900 relative">
-                        <img src="gb4.JPG" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500" alt="BSI Digination Poster">
+                <div class="group bg-white dark:bg-rock-card border border-neutral-200 dark:border-neutral-800 p-2 rounded-xl shadow-sm transition-all duration-300 hover:border-neutral-300 dark:hover:border-neutral-700">
+                    <div class="overflow-hidden rounded-md aspect-video bg-neutral-100 dark:bg-neutral-900 relative">
+                        <img src="gb4.JPG" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" alt="BSI Digination Poster">
                     </div>
-                    <p class="text-[10px] font-bold mt-3 text-slate-500 dark:text-slate-400 uppercase tracking-widest">Poster Event</p>
-                    <h4 class="text-sm font-bold mt-1 text-slate-900 dark:text-white line-clamp-2">BSI Digination - Artificial Intelligence for Education (Narasumber)</h4>
+                    <p class="text-[10px] font-medium mt-2.5 text-neutral-400 dark:text-neutral-500 tracking-tight">Poster Event</p>
+                    <h4 class="text-xs font-semibold mt-0.5 text-black dark:text-white line-clamp-2 leading-snug">BSI Digination - Artificial Intelligence for Education (Narasumber)</h4>
                 </div>
-                <div class="group bg-white dark:bg-rock-card border border-black/5 dark:border-white/5 p-3 rounded-2xl shadow-md hover:border-emerald-500/50 dark:hover:border-rock-neon/50 transition-all duration-300 hover:-translate-y-2">
-                    <div class="overflow-hidden rounded-xl aspect-video bg-slate-900 relative">
-                        <img src="gb5.JPG" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500" alt="Seminar Parenting Poster">
+                <div class="group bg-white dark:bg-rock-card border border-neutral-200 dark:border-neutral-800 p-2 rounded-xl shadow-sm transition-all duration-300 hover:border-neutral-300 dark:hover:border-neutral-700">
+                    <div class="overflow-hidden rounded-md aspect-video bg-neutral-100 dark:bg-neutral-900 relative">
+                        <img src="gb5.JPG" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" alt="Seminar Parenting Poster">
                     </div>
-                    <p class="text-[10px] font-bold mt-3 text-emerald-600 dark:text-rock-neon uppercase tracking-widest">Poster Seminar</p>
-                    <h4 class="text-sm font-bold mt-1 text-slate-900 dark:text-white line-clamp-2">Seminar Parenting - Cara Tembus Beasiswa PTN & PTS (Narasumber)</h4>
+                    <p class="text-[10px] font-medium mt-2.5 text-neutral-400 dark:text-neutral-500 tracking-tight">Poster Seminar</p>
+                    <h4 class="text-xs font-semibold mt-0.5 text-black dark:text-white line-clamp-2 leading-snug">Seminar Parenting - Cara Tembus Beasiswa PTN & PTS (Narasumber)</h4>
                 </div>
-                <div class="group bg-white dark:bg-rock-card border border-black/5 dark:border-white/5 p-3 rounded-2xl shadow-md hover:border-black/10 dark:hover:border-white/20 transition-all duration-300 hover:-translate-y-2">
-                    <div class="overflow-hidden rounded-xl aspect-video bg-slate-900 relative">
-                        <img src="gb6.JPG" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500" alt="Beyond AI Outlook Poster">
+                <div class="group bg-white dark:bg-rock-card border border-neutral-200 dark:border-neutral-800 p-2 rounded-xl shadow-sm transition-all duration-300 hover:border-neutral-300 dark:hover:border-neutral-700">
+                    <div class="overflow-hidden rounded-md aspect-video bg-neutral-100 dark:bg-neutral-900 relative">
+                        <img src="gb6.JPG" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" alt="Beyond AI Outlook Poster">
                     </div>
-                    <p class="text-[10px] font-bold mt-3 text-slate-500 dark:text-slate-400 uppercase tracking-widest">Outlook 2026</p>
-                    <h4 class="text-sm font-bold mt-1 text-slate-900 dark:text-white line-clamp-2">Seminar Beyond AI Outlook 2026 - UBSI Kalimalang</h4>
+                    <p class="text-[10px] font-medium mt-2.5 text-neutral-400 dark:text-neutral-500 tracking-tight">Outlook 2026</p>
+                    <h4 class="text-xs font-semibold mt-0.5 text-black dark:text-white line-clamp-2 leading-snug">Seminar Beyond AI Outlook 2026 - UBSI Kalimalang</h4>
                 </div>
-                <div class="group bg-white dark:bg-rock-card border border-black/5 dark:border-white/5 p-3 rounded-2xl shadow-md hover:border-emerald-500/50 dark:hover:border-rock-neon/50 transition-all duration-300 hover:-translate-y-2">
-                    <div class="overflow-hidden rounded-xl aspect-video bg-slate-900 relative">
-                        <img src="gb7.JPG" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500" alt="Workshop AI Cikampek">
+                <div class="group bg-white dark:bg-rock-card border border-neutral-200 dark:border-neutral-800 p-2 rounded-xl shadow-sm transition-all duration-300 hover:border-neutral-300 dark:hover:border-neutral-700">
+                    <div class="overflow-hidden rounded-md aspect-video bg-neutral-100 dark:bg-neutral-900 relative">
+                        <img src="gb7.JPG" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" alt="Workshop AI Cikampek">
                     </div>
-                    <p class="text-[10px] font-bold mt-3 text-emerald-600 dark:text-rock-neon uppercase tracking-widest">Workshop AI</p>
-                    <h4 class="text-sm font-bold mt-1 text-slate-900 dark:text-white line-clamp-2">Workshop Beyond AI Outlook 2026 - Optimize Your Skill with AI</h4>
+                    <p class="text-[10px] font-medium mt-2.5 text-neutral-400 dark:text-neutral-500 tracking-tight">Workshop AI</p>
+                    <h4 class="text-xs font-semibold mt-0.5 text-black dark:text-white line-clamp-2 leading-snug">Workshop Beyond AI Outlook 2026 - Optimize Your Skill with AI</h4>
                 </div>
-                <div class="group bg-white dark:bg-rock-card border border-black/5 dark:border-white/5 p-3 rounded-2xl shadow-md hover:border-black/10 dark:hover:border-white/20 transition-all duration-300 hover:-translate-y-2">
-                    <div class="overflow-hidden rounded-xl aspect-video bg-slate-900 relative">
-                        <img src="gb8.JPG" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500" alt="LSP Sertifikasi">
+                <div class="group bg-white dark:bg-rock-card border border-neutral-200 dark:border-neutral-800 p-2 rounded-xl shadow-sm transition-all duration-300 hover:border-neutral-300 dark:hover:border-neutral-700">
+                    <div class="overflow-hidden rounded-md aspect-video bg-neutral-100 dark:bg-neutral-900 relative">
+                        <img src="gb8.JPG" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" alt="LSP Sertifikasi">
                     </div>
-                    <p class="text-[10px] font-bold mt-3 text-slate-500 dark:text-slate-400 uppercase tracking-widest">Sertifikasi</p>
-                    <h4 class="text-sm font-bold mt-1 text-slate-900 dark:text-white line-clamp-2">Uji Sertifikasi Kompetensi Dosen LSP Universitas Bina Sarana Informatika</h4>
+                    <p class="text-[10px] font-medium mt-2.5 text-neutral-400 dark:text-neutral-500 tracking-tight">Sertifikasi</p>
+                    <h4 class="text-xs font-semibold mt-0.5 text-black dark:text-white line-clamp-2 leading-snug">Uji Sertifikasi Kompetensi Dosen LSP Universitas Bina Sarana Informatika</h4>
                 </div>
-                <div class="group bg-white dark:bg-rock-card border border-black/5 dark:border-white/5 p-3 rounded-2xl shadow-md hover:border-emerald-500/50 dark:hover:border-rock-neon/50 transition-all duration-300 hover:-translate-y-2">
-                    <div class="overflow-hidden rounded-xl aspect-video bg-slate-900 relative">
-                        <img src="gb9.JPG" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500" alt="Public Relations">
+                <div class="group bg-white dark:bg-rock-card border border-neutral-200 dark:border-neutral-800 p-2 rounded-xl shadow-sm transition-all duration-300 hover:border-neutral-300 dark:hover:border-neutral-700">
+                    <div class="overflow-hidden rounded-md aspect-video bg-neutral-100 dark:bg-neutral-900 relative">
+                        <img src="gb9.JPG" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" alt="Public Relations">
                     </div>
-                    <p class="text-[10px] font-bold mt-3 text-emerald-600 dark:text-rock-neon uppercase tracking-widest">Public Relations</p>
-                    <h4 class="text-sm font-bold mt-1 text-slate-900 dark:text-white line-clamp-2">Aktivitas Koordinasi & Strategi PR Lapangan Bersama Tim Eksternal</h4>
+                    <p class="text-[10px] font-medium mt-2.5 text-neutral-400 dark:text-neutral-500 tracking-tight">Public Relations</p>
+                    <h4 class="text-xs font-semibold mt-0.5 text-black dark:text-white line-clamp-2 leading-snug">Aktivitas Koordinasi & Strategi PR Lapangan Bersama Tim Eksternal</h4>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="blog" class="py-28 px-6 reveal">
+    <section id="blog" class="py-20 px-6 reveal">
         <div class="container mx-auto max-w-4xl">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-display font-bold uppercase text-slate-900 dark:text-white tracking-tight">Artikel & Berita Terbaru</h2>
-                <p class="text-slate-500 dark:text-slate-400 text-sm mt-3 max-w-md mx-auto font-medium">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl font-display font-bold text-black dark:text-white tracking-tight">Artikel & Berita Terbaru</h2>
+                <p class="text-neutral-400 dark:text-neutral-500 text-xs mt-1 max-w-md mx-auto">
                     Berbagi insight seputar AI, Data Science, Ide Kreatif, dan Tren Teknologi Digital.
                 </p>
             </div>
 
-            <div id="blog-container" class="space-y-6 max-w-3xl mx-auto">
+            <div id="blog-container" class="space-y-4 max-w-2xl mx-auto">
             </div>
         </div>
     </section>
 
-    <section id="skills" class="bg-black/[0.02] dark:bg-black/20 py-28 px-6 border-t border-black/5 dark:border-white/5 reveal">
+    <section id="skills" class="bg-neutral-50 dark:bg-[#111111] py-20 px-6 border-t border-neutral-200 dark:border-neutral-800 reveal">
         <div class="container mx-auto max-w-4xl text-center">
-            <h2 class="text-4xl font-display font-bold uppercase mb-4 text-slate-900 dark:text-white tracking-tight">Professional Skills</h2>
-            <p class="text-slate-500 dark:text-slate-400 text-sm mb-12 max-w-md mx-auto font-medium">Klik pada tombol keahlian di bawah untuk merasakan ritme interaksinya!</p>
+            <h2 class="text-2xl font-display font-bold mb-1 text-black dark:text-white tracking-tight">Professional Skills</h2>
+            <p class="text-neutral-400 dark:text-neutral-500 text-xs mb-8 max-w-md mx-auto">Klik pada tombol keahlian di bawah untuk merasakan ritme interaksinya!</p>
             
-            <div class="flex flex-wrap justify-center gap-4 bg-white dark:bg-rock-card p-10 rounded-3xl border border-black/5 dark:border-white/5 shadow-xl">
+            <div class="flex flex-wrap justify-center gap-2.5 bg-white dark:bg-rock-card p-6 rounded-xl border border-neutral-200 dark:border-neutral-800 shadow-sm">
                 
-                <button onclick="playRockEffect(this)" class="px-6 py-4 bg-slate-900 dark:bg-white text-white dark:text-black hover:bg-rock-neon dark:hover:bg-rock-neon hover:text-black font-extrabold uppercase tracking-wider text-sm rounded-2xl shadow-md transition-all duration-300 flex items-center gap-2 transform hover:scale-105 active:scale-95">
-                    <i class="bi bi-code-slash text-base"></i> Web Development
+                <button onclick="playRockEffect(this)" class="px-4 py-2 bg-transparent text-neutral-800 dark:text-neutral-200 border border-neutral-200 dark:border-neutral-800 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black font-medium tracking-tight text-xs rounded-md transition-all duration-150 flex items-center gap-2">
+                    <i class="bi bi-code-slash text-sm"></i> Web Development
                 </button>
 
-                <button onclick="playRockEffect(this)" class="px-6 py-4 bg-slate-900 dark:bg-white text-white dark:text-black hover:bg-rock-neon dark:hover:bg-rock-neon hover:text-black font-extrabold uppercase tracking-wider text-sm rounded-2xl shadow-md transition-all duration-300 flex items-center gap-2 transform hover:scale-105 active:scale-95">
-                    <i class="bi bi-cpu text-base"></i> AI & Machine Learning
+                <button onclick="playRockEffect(this)" class="px-4 py-2 bg-transparent text-neutral-800 dark:text-neutral-200 border border-neutral-200 dark:border-neutral-800 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black font-medium tracking-tight text-xs rounded-md transition-all duration-150 flex items-center gap-2">
+                    <i class="bi bi-cpu text-sm"></i> AI & Machine Learning
                 </button>
 
-                <button onclick="playRockEffect(this)" class="px-6 py-4 bg-slate-900 dark:bg-white text-white dark:text-black hover:bg-rock-neon dark:hover:bg-rock-neon hover:text-black font-extrabold uppercase tracking-wider text-sm rounded-2xl shadow-md transition-all duration-300 flex items-center gap-2 transform hover:scale-105 active:scale-95">
-                    <i class="bi bi-megaphone text-base"></i> Strategic Marketing Area
+                <button onclick="playRockEffect(this)" class="px-4 py-2 bg-transparent text-neutral-800 dark:text-neutral-200 border border-neutral-200 dark:border-neutral-800 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black font-medium tracking-tight text-xs rounded-md transition-all duration-150 flex items-center gap-2">
+                    <i class="bi bi-megaphone text-sm"></i> Strategic Marketing Area
                 </button>
 
-                <button onclick="playRockEffect(this)" class="px-6 py-4 bg-slate-900 dark:bg-white text-white dark:text-black hover:bg-rock-neon dark:hover:bg-rock-neon hover:text-black font-extrabold uppercase tracking-wider text-sm rounded-2xl shadow-md transition-all duration-300 flex items-center gap-2 transform hover:scale-105 active:scale-95">
-                    <i class="bi bi-journal-text text-base"></i> Digital Technology & Creative Development
+                <button onclick="playRockEffect(this)" class="px-4 py-2 bg-transparent text-neutral-800 dark:text-neutral-200 border border-neutral-200 dark:border-neutral-800 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black font-medium tracking-tight text-xs rounded-md transition-all duration-150 flex items-center gap-2">
+                    <i class="bi bi-journal-text text-sm"></i> Digital Technology & Creative Development
                 </button>
 
-                <button onclick="playRockEffect(this)" class="px-6 py-4 bg-slate-900 dark:bg-white text-white dark:text-black hover:bg-rock-neon dark:hover:bg-rock-neon hover:text-black font-extrabold uppercase tracking-wider text-sm rounded-2xl shadow-md transition-all duration-300 flex items-center gap-2 transform hover:scale-105 active:scale-95">
-                    <i class="bi bi-award text-base"></i> Brand Strategy
+                <button onclick="playRockEffect(this)" class="px-4 py-2 bg-transparent text-neutral-800 dark:text-neutral-200 border border-neutral-200 dark:border-neutral-800 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black font-medium tracking-tight text-xs rounded-md transition-all duration-150 flex items-center gap-2">
+                    <i class="bi bi-award text-sm"></i> Brand Strategy
                 </button>
 
-                <button onclick="playRockEffect(this)" class="px-6 py-4 bg-slate-900 dark:bg-white text-white dark:text-black hover:bg-rock-pink hover:text-white dark:hover:bg-rock-pink font-extrabold uppercase tracking-wider text-sm rounded-2xl shadow-md transition-all duration-300 flex items-center gap-2 transform hover:scale-105 active:scale-95">
-                    <i class="bi bi-database-down text-base"></i> Data Mining
+                <button onclick="playRockEffect(this)" class="px-4 py-2 bg-transparent text-neutral-800 dark:text-neutral-200 border border-neutral-200 dark:border-neutral-800 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black font-medium tracking-tight text-xs rounded-md transition-all duration-150 flex items-center gap-2">
+                    <i class="bi bi-database-down text-sm"></i> Data Mining
                 </button>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-28 px-6 bg-black/[0.01] dark:bg-black/10 border-t border-black/5 dark:border-white/5">
-        <div class="max-w-4xl mx-auto text-center space-y-8">
-            <div class="space-y-4">
-                <h2 class="text-4xl font-display font-bold uppercase text-slate-900 dark:text-white tracking-tight">Let's Collaborate</h2>
-                <p class="text-slate-500 dark:text-slate-400 font-medium">Kolaborasi riset, seminar, pelatihan, dan project digital.</p>
+    <section id="contact" class="py-20 px-6 bg-transparent border-t border-neutral-200 dark:border-neutral-800">
+        <div class="max-w-4xl mx-auto text-center space-y-6">
+            <div class="space-y-2">
+                <h2 class="text-2xl font-display font-bold text-black dark:text-white tracking-tight">Let's Collaborate</h2>
+                <p class="text-neutral-400 dark:text-neutral-500 text-xs font-normal">Kolaborasi riset, seminar, pelatihan, dan project digital.</p>
             </div>
             
-            <div class="flex justify-center gap-4 flex-wrap pt-2">
-                <a href="mailto:agung.fzr@bsi.ac.id" class="px-8 py-3.5 bg-gradient-to-r from-emerald-500 to-rock-neon text-black font-extrabold uppercase tracking-wider text-xs rounded-full hover:shadow-[0_0_25px_rgba(0,255,127,0.4)] transition-all">
-                    <i class="bi bi-envelope-fill mr-2"></i> Email Direct
+            <div class="flex justify-center gap-3 flex-wrap pt-1">
+                <a href="mailto:agung.fzr@bsi.ac.id" class="px-5 py-2 bg-black dark:bg-white text-white dark:text-black font-medium text-xs rounded-md border border-neutral-800 dark:border-neutral-200 hover:bg-neutral-900 dark:hover:bg-neutral-100 transition-all shadow-sm">
+                    <i class="bi bi-envelope-fill mr-1.5"></i> Email Direct
                 </a>
-                <a href="https://wa.me/6289502072043" target="_blank" class="px-8 py-3.5 bg-slate-900 dark:bg-rock-card text-white border border-black/10 dark:border-white/10 font-extrabold uppercase tracking-wider text-xs rounded-full hover:bg-rock-neon hover:text-black transition-all">
-                    <i class="bi bi-whatsapp mr-2 text-emerald-500 dark:text-rock-neon"></i> WhatsApp
+                <a href="https://wa.me/6289502072043" target="_blank" class="px-5 py-2 bg-transparent text-neutral-800 dark:text-neutral-200 border border-neutral-200 dark:border-neutral-800 font-medium text-xs rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-all">
+                    <i class="bi bi-whatsapp mr-1.5 text-neutral-700 dark:text-neutral-300"></i> WhatsApp
                 </a>
             </div>
 
-            <div class="pt-6 border-t border-black/5 dark:border-white/5 max-w-sm mx-auto">
-                <div class="flex justify-center gap-4">
-                    <a href="https://github.com/agung-growth" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-2xl bg-white dark:bg-rock-card border border-black/5 dark:border-white/5 text-xl text-slate-700 dark:text-slate-300 hover:bg-rock-neon hover:text-black dark:hover:bg-rock-neon dark:hover:text-black transition-all shadow-md" aria-label="GitHub"><i class="bi bi-github"></i></a>
-                    <a href="https://instagram.com/agung.growth" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-2xl bg-white dark:bg-rock-card border border-black/5 dark:border-white/5 text-xl text-slate-700 dark:text-slate-300 hover:bg-rock-neon hover:text-black dark:hover:bg-rock-neon dark:hover:text-black transition-all shadow-md" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                    <a href="https://id.linkedin.com/in/agung-fazriansyah-1b0017119" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-2xl bg-white dark:bg-rock-card border border-black/5 dark:border-white/5 text-xl text-slate-700 dark:text-slate-300 hover:bg-rock-neon hover:text-black dark:hover:bg-rock-neon dark:hover:text-black transition-all shadow-md" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                    <a href="https://scholar.google.com/citations?user=iWzIfyEAAAAJ&hl=id" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-2xl bg-white dark:bg-rock-card border border-black/5 dark:border-white/5 text-xl text-slate-700 dark:text-slate-300 hover:bg-rock-neon hover:text-black dark:hover:bg-rock-neon dark:hover:text-black transition-all shadow-md" aria-label="Google Scholar"><i class="bi bi-mortarboard-fill"></i></a>
+            <div class="pt-6 border-t border-neutral-200 dark:border-neutral-800 max-w-xs mx-auto">
+                <div class="flex justify-center gap-2">
+                    <a href="https://github.com/agung-growth" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-md bg-white dark:bg-rock-card border border-neutral-200 dark:border-neutral-800 text-base text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-all shadow-sm" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                    <a href="https://instagram.com/agung.growth" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-md bg-white dark:bg-rock-card border border-neutral-200 dark:border-neutral-800 text-base text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-all shadow-sm" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="https://id.linkedin.com/in/agung-fazriansyah-1b0017119" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-md bg-white dark:bg-rock-card border border-neutral-200 dark:border-neutral-800 text-base text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-all shadow-sm" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="https://scholar.google.com/citations?user=iWzIfyEAAAAJ&hl=id" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-md bg-white dark:bg-rock-card border border-neutral-200 dark:border-neutral-800 text-base text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-all shadow-sm" aria-label="Google Scholar"><i class="bi bi-mortarboard-fill"></i></a>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <footer class="bg-white dark:bg-rock-dark text-center py-14 px-6 border-t border-black/5 dark:border-white/5">
-        <div class="container mx-auto max-w-5xl space-y-2">
-            <h3 class="font-display font-bold uppercase text-base text-slate-900 dark:text-white tracking-wide">Agung Fazriansyah</h3>
-            <p class="text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Lecturer • Marketing & Communications • Creative Writer Idea</p>
+    <footer class="bg-white dark:bg-rock-dark text-center py-10 px-6 border-t border-neutral-200 dark:border-neutral-800">
+        <div class="container mx-auto max-w-5xl space-y-1">
+            <h3 class="font-display font-medium text-sm text-black dark:text-white tracking-tight">Agung Fazriansyah</h3>
+            <p class="text-[11px] text-neutral-400 dark:text-neutral-500 font-normal tracking-tight">Lecturer • Marketing & Communications • Creative Writer Idea</p>
         </div>
     </footer>
 
@@ -409,7 +401,7 @@
             element.classList.add('animate-rock-shake');
             setTimeout(() => {
                 element.classList.remove('animate-rock-shake');
-            }, 500);
+            }, 200);
         }
 
         // 1. SISTEM TOGGLE TEMA
@@ -437,7 +429,7 @@
         // 2. REVEAL ANIMASI GULIR
         const observer = new IntersectionObserver(entries => {
             entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('show') })
-        }, { threshold: 0.08 });
+        }, { threshold: 0.05 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
         // 3. RESPONSIVITAS NAVBAR HAMBURGER 
@@ -465,7 +457,7 @@
         const defaultPosts = [
             {
                 id: 1,
-                title: "Pemanfaatan Artificial Intelligence dalam Dunia Pendidikan Modern",
+                title: "Pemanfaalan Artificial Intelligence dalam Dunia Pendidikan Modern",
                 category: "AI & Edukasi",
                 date: "19 Juni 2026",
                 content: "Artificial Intelligence (AI) bukan lagi masa depan, melainkan masa kini. Dalam pilar pendidikan, machine learning membantu dosen mendeteksi preferensi belajar mahasiswa, mengotomatisasi penilaian, dan memberikan materi yang dipersonalisasi. Implementasi AI yang tepat dapat melahirkan ekosistem belajar yang adaptif and inklusif."
@@ -487,24 +479,24 @@
             container.innerHTML = "";
 
             if(posts.length === 0) {
-                container.innerHTML = `<p class="text-center text-slate-500 py-8">Belum ada artikel yang dipublikasikan.</p>`;
+                container.innerHTML = `<p class="text-center text-neutral-400 py-6 text-sm">Belum ada artikel yang dipublikasikan.</p>`;
                 return;
             }
 
             posts.forEach(post => {
                 const itemRow = document.createElement('div');
-                itemRow.className = "bg-white dark:bg-rock-card border border-black/5 dark:border-white/5 p-5 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-4 group hover:border-emerald-500/40 dark:hover:border-rock-neon/40 transition-all duration-300";
+                itemRow.className = "bg-white dark:bg-rock-card border border-neutral-200 dark:border-neutral-800 p-4 rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-4 group transition-all duration-200 hover:border-neutral-300 dark:hover:border-neutral-700";
                 
                 itemRow.innerHTML = `
-                    <div class="space-y-1.5 flex-grow max-w-xl">
-                        <div class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider">
-                            <span class="text-emerald-600 dark:text-rock-neon">${post.category}</span>
-                            <span class="text-slate-400 dark:text-slate-500 font-medium">• ${post.date}</span>
+                    <div class="space-y-1 flex-grow max-w-xl">
+                        <div class="flex items-center gap-2 text-xs font-medium">
+                            <span class="text-neutral-500 dark:text-neutral-400">${post.category}</span>
+                            <span class="text-neutral-400 dark:text-neutral-600 font-normal">• ${post.date}</span>
                         </div>
-                        <h3 class="text-base font-display font-bold text-slate-900 dark:text-white leading-snug uppercase tracking-tight group-hover:text-emerald-600 dark:group-hover:text-rock-neon transition-colors">${post.title}</h3>
+                        <h3 class="text-sm font-bold text-black dark:text-white leading-snug tracking-tight transition-colors">${post.title}</h3>
                     </div>
                     <div class="flex-shrink-0 self-start md:self-center">
-                        <a href="detail.html?id=${post.id}" class="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-black uppercase tracking-wider text-black bg-rock-neon rounded-xl hover:bg-emerald-400 transition-all shadow-sm">
+                        <a href="detail.html?id=${post.id}" class="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-white dark:text-black bg-black dark:bg-white rounded-md hover:bg-neutral-900 dark:hover:bg-neutral-100 transition-all border border-neutral-800 dark:border-neutral-200">
                             Baca <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
