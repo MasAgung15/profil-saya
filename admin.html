@@ -169,7 +169,6 @@
                 </div>
 
                 <div class="lg:col-span-5 space-y-8">
-                    
                     <div class="bg-white border border-slate-200/60 rounded-3xl p-6 shadow-sm space-y-4">
                         <div class="flex items-center gap-2 text-natural-muted border-b border-slate-100 pb-3">
                             <i class="bi bi-eye-fill"></i>
@@ -189,10 +188,8 @@
                         <div class="border-b border-slate-100 pb-3">
                             <h3 class="text-xs font-bold uppercase tracking-wider text-natural-base">Daftar Koleksi Artikel</h3>
                         </div>
-                        <div id="admin-post-list" class="space-y-3 divide-y divide-slate-100 max-h-[400px] overflow-y-auto pr-1">
-                            </div>
+                        <div id="admin-post-list" class="space-y-3 divide-y divide-slate-100 max-h-[400px] overflow-y-auto pr-1"></div>
                     </div>
-
                 </div>
 
             </div>
@@ -200,12 +197,10 @@
     </div>
 
     <script>
-        // HASH KREDENSIAL YANG DISAMARKAN (SHA-256 dari username "agungfzr" & password "dahlia13")
-        // Kode asli tidak bocor di dalam skrip ini.
-        const TARGET_U_HASH = "e36e65b4c107f9cde2f2bfda977873602d338f9730248c89c8a958fe0bcfa3f7"; 
-        const TARGET_P_HASH = "cb8faeef48ebfe8b809805ff9ffdf4ca67923485fa5025ea11db2823b2d18ca0";
+        // HASH KREDENSIAL YANG SUDAH DIPERBAIKI SECARA AKURAT
+        const TARGET_U_HASH = "8b965f9bfdcbf4fa2c6d480ee2e652bf335804595d28b17c87fb56bc8b3d63bd"; 
+        const TARGET_P_HASH = "12d1b714571d4b68e7ec89fcfda7888b64e526a6be3f03b22cf94814d6934c51";
 
-        // Fungsi enkripsi satu arah untuk validasi string input
         async function sha256(string) {
             const utf8 = new TextEncoder().encode(string);
             const hashBuffer = await crypto.subtle.digest('SHA-256', utf8);
@@ -213,22 +208,21 @@
             return hashArray.map(bytes => bytes.toString(16).padStart(2, '0')).join('');
         }
 
-        // FUNGSI UTAMA LOGIN
         async function handleLogin(event) {
             event.preventDefault();
-            const uInput = document.getElementById('login-username').value;
-            const pInput = document.getElementById('login-password').value;
+            // Menambahkan .trim() untuk meminimalisir kesalahan spasi tak sengaja saat mengetik
+            const uInput = document.getElementById('login-username').value.trim();
+            const pInput = document.getElementById('login-password').value.trim();
             const errorDiv = document.getElementById('login-error');
 
             const uHash = await sha256(uInput);
             const pHash = await sha256(pInput);
 
             if (uHash === TARGET_U_HASH && pHash === TARGET_P_HASH) {
-                // Login Berhasil -> Simpan status sesi aktif di sessionStorage (hilang saat tab ditutup)
                 sessionStorage.setItem('isAdminAuthenticated', 'true');
+                errorDiv.classList.add('hidden');
                 showDashboard();
             } else {
-                // Login Gagal -> Tampilkan Notifikasi Error
                 errorDiv.classList.remove('hidden');
                 document.getElementById('login-password').value = "";
             }
@@ -246,16 +240,14 @@
             window.location.reload();
         }
 
-        // PROTEKSI LOAD HALAMAN (Mencegah Bypass Akses Tanpa Login)
         window.addEventListener('DOMContentLoaded', () => {
             if (sessionStorage.getItem('isAdminAuthenticated') === 'true') {
                 showDashboard();
             }
         });
 
-
         // ==========================================
-        // FITUR PENGELOLAAN ARTIKEL (FITUR DASAR TETAP SAMA)
+        // FITUR CMS UTAMA
         // ==========================================
         const blogForm = document.getElementById('blog-form');
         const postIdInput = document.getElementById('post-id');
@@ -345,7 +337,6 @@
             let posts = JSON.parse(localStorage.getItem('agung_blog_posts')) || defaultPosts;
 
             if (id) {
-                // Mode Update / Sunting
                 posts = posts.map(p => {
                     if (p.id == id) {
                         return { ...p, title, category, date, content, image: currentImageBase64 || p.image };
@@ -354,7 +345,6 @@
                 });
                 alert("Artikel sukses diperbarui!");
             } else {
-                // Mode Buat Baru
                 const newPost = {
                     id: Date.now(),
                     title,
@@ -396,8 +386,8 @@
                         <h4 class="text-xs font-bold text-slate-800 line-clamp-1 uppercase tracking-tight mt-0.5">${post.title}</h4>
                     </div>
                     <div class="flex items-center gap-1.5 self-end sm:self-center">
-                        <button onclick="editPost(${post.id})" class="p-2 bg-slate-50 border border-slate-200 text-natural-blue rounded-lg hover:bg-natural-blue hover:text-white transition-all text-xs" title="Sunting"><i class="bi bi-pencil-square"></i></button>
-                        <button onclick="deletePost(${post.id})" class="p-2 bg-slate-50 border border-slate-200 text-red-600 rounded-lg hover:bg-red-600 hover:text-white transition-all text-xs" title="Hapus"><i class="bi bi-trash3-fill"></i></button>
+                        <button type="button" onclick="editPost(${post.id})" class="p-2 bg-slate-50 border border-slate-200 text-natural-blue rounded-lg hover:bg-natural-blue hover:text-white transition-all text-xs" title="Sunting"><i class="bi bi-pencil-square"></i></button>
+                        <button type="button" onclick="deletePost(${post.id})" class="p-2 bg-slate-50 border border-slate-200 text-red-600 rounded-lg hover:bg-red-600 hover:text-white transition-all text-xs" title="Hapus"><i class="bi bi-trash3-fill"></i></button>
                     </div>
                 `;
                 listContainer.appendChild(item);
